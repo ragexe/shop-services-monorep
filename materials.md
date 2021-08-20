@@ -18,6 +18,13 @@
 
 - [Lecture 3](https://www.youtube.com/watch?v=BJwx3XQ9ZqI)
 - [Q&A Session 3](https://www.youtube.com/watch?v=5ymuKq_RpZQ)
+##### More detailed material on the 3rd task:
+Introductory basic theory on Lambda - https://videoportal.epam.com/video/elN67KV30zeZvdl0JVZz
+Basic Practice Example with Lambda and API Gateway - https://videoportal.epam.com/video/lNdwY9x6pwOnwgvpay2G
+More advanced theory on Lambda - https://videoportal.epam.com/video/XmRlaydwkn94NzNR7jno
+REST service example practice - https://videoportal.epam.com/video/lNZRYplXNbrx8LA1YyXQ
+Detailed description of homework - https://videoportal.epam.com/video/9w0kaE2mNwKn6w6GYeLn
+Remind you that the description of task 3 here - https://github.com/EPAM-JS-Competency-center/cloud-development-course-initial/blob/main/task3-product-magamanent-api/task.md
 
 #### Part 4
 

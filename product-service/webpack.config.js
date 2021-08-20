@@ -1,5 +1,5 @@
 const path = require('path');
-const slsw = require('serverless-webpack');
+const serverlessWebpack = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
@@ -10,9 +10,9 @@ This line is only required if you are specifying `TS_NODE_PROJECT` for whatever 
 
 module.exports = {
   context: __dirname,
-  mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
-  entry: slsw.lib.entries,
-  devtool: slsw.lib.webpack.isLocal ? 'eval-cheap-module-source-map' : 'source-map',
+  mode: serverlessWebpack.lib.webpack.isLocal ? 'development' : 'production',
+  entry: serverlessWebpack.lib.entries,
+  devtool: serverlessWebpack.lib.webpack.isLocal ? 'eval-cheap-module-source-map' : 'source-map',
   resolve: {
     extensions: ['.mjs', '.json', '.ts'],
     symlinks: false,

@@ -4,7 +4,8 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx sls invoke local -f hello --path src/functions/hello/mock.json",
+    "deploy": "npx serverless deploy"
   },
   "engines": {
     "node": ">=14.15.0"
