@@ -1,0 +1,16 @@
+{
+  "name": "shop-services-monorep",
+  "version": "1.0.0",
+  "description": "Monorepository for API-based microservices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "rss",
+    "nodejs"
+  ],
+  "author": "ragexe",
+  "license": "MIT"
+}
