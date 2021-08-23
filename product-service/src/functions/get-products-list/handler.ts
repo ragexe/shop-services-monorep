@@ -6,7 +6,7 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult, Handler } from 'aws-lambda
 
 import products from '../../model/products.json';
 
-const getProductsList: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> =
+const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> =
   async (event) => {
     return formatJSONResponse({
       products,
@@ -14,4 +14,4 @@ const getProductsList: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> =
     });
   };
 
-export const main = middyfy(getProductsList);
+export const main = middyfy(handler);

@@ -6,10 +6,11 @@ const events: TAWSFunctionEvent = [
   {
     http: {
       method: 'get',
-      path: 'getProductsList',
+      path: 'getProductsById',
       request: {
         parameters: {
           querystrings: {
+            id: true,
             debug: false,
           },
         },
