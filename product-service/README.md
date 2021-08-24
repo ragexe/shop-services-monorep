@@ -110,7 +110,7 @@ Any tsconfig.json can be used, but if you do, set the environment variable `TS_N
   "swagger" : "2.0",
   "info" : {
     "description" : "This is API based microservice to get mocked products",
-    "version" : "2021-08-24T14:03:25Z",
+    "version" : "2021-08-24T15:32:46Z",
     "title" : "product-service-dev",
     "contact" : {
       "name" : "ragexe",
@@ -163,6 +163,12 @@ Any tsconfig.json can be used, but if you do, set the environment variable `TS_N
             "description" : "400 response",
             "schema" : {
               "$ref" : "#/definitions/400JsonResponse"
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "schema" : {
+              "$ref" : "#/definitions/404JsonResponse"
             }
           }
         }
@@ -307,6 +313,17 @@ Any tsconfig.json can be used, but if you do, set the environment variable `TS_N
         },
         "formattedAmount" : {
           "type" : "string"
+        }
+      }
+    },
+    "404JsonResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "statusCode" : {
+          "type" : "number"
         }
       }
     },

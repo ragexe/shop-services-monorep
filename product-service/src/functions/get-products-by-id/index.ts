@@ -44,6 +44,12 @@ const events: TAWSFunctionCustomEvent = [
               'application/json': '400JsonResponse',
             },
           },
+          {
+            statusCode: '404',
+            responseModels: {
+              'application/json': '404JsonResponse',
+            },
+          },
         ],
       },
     },

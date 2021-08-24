@@ -1,5 +1,5 @@
 import { getProductsList } from '../functions/get-products-list/get-products-list';
-import { Product, SourceProvider } from './../model';
+import { ErrorMessages, Product, SourceProvider } from './../model';
 import productsMocks from './mock-products.json';
 
 describe('Lambda core getProductsList function', () => {
@@ -37,7 +37,7 @@ describe('Lambda core getProductsList function', () => {
     };
 
     expect(() => getProductsList(sourceProvider)).toThrowError(
-      Error('Something bad happened!'),
+      Error(ErrorMessages.SomethingBadHappened),
     );
   });
 
@@ -49,7 +49,7 @@ describe('Lambda core getProductsList function', () => {
     };
 
     expect(() => getProductsList(sourceProvider)).toThrowError(
-      Error('Bad format!'),
+      Error(ErrorMessages.BadFormat),
     );
   });
 });

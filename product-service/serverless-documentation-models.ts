@@ -352,12 +352,11 @@ const PRODUCT_MODELS = [
   },
 ];
 
-const REQUEST_MODELS = [
-];
+const REQUEST_MODELS = [];
 
 const RESPONSE_MODELS = [
   {
-    name: 'MessageResponse',
+    name: '400JsonResponse',
     contentType: 'application/json',
     schema: {
       type: 'object',
@@ -365,11 +364,14 @@ const RESPONSE_MODELS = [
         message: {
           type: 'string',
         },
+        statusCode: {
+          type: 'number',
+        },
       },
     },
   },
   {
-    name: '400JsonResponse',
+    name: '404JsonResponse',
     contentType: 'application/json',
     schema: {
       type: 'object',

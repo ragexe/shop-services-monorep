@@ -12,41 +12,52 @@ export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<
   APIGatewayProxyResult
 >;
 
-export const formResponse200: (
+type TSupportedStatusCodes = 200 | 400 | 404;
+type TFormResponse = (
+  response: Record<string, unknown>,
+  event: any,
+  {
+    debug,
+  }: {
+    debug?: boolean | undefined;
+  },
+) => {
+  statusCode: TSupportedStatusCodes;
+  body: string;
+};
+
+export const formResponse200: TFormResponse = (
+  response: Record<string, unknown>,
+  event,
+  { debug = false },
+) => formResponse(200, response, event, { debug });
+export const formResponse400: TFormResponse = (
+  response: Record<string, unknown>,
+  event,
+  { debug = false },
+) => formResponse(400, response, event, { debug });
+export const formResponse404: TFormResponse = (
+  response: Record<string, unknown>,
+  event,
+  { debug = false },
+) => formResponse(404, response, event, { debug });
+
+const formResponse: (
+  statusCode: TSupportedStatusCodes,
   response: Record<string, unknown>,
   proxyEvent: APIGatewayProxyEvent,
   { debug: boolean },
 ) => {
-  statusCode: 200 | 400;
+  statusCode: TSupportedStatusCodes;
   body: string;
-} = (response: Record<string, unknown>, event, { debug = false }) => {
+} = (statusCode, response, event, { debug = false }) => {
   const resultResponseBody = {
     ...(debug ? { event } : {}),
     ...response,
   };
 
-  return formatJSONResponse(200, resultResponseBody);
-};
-
-export const formResponse400: (
-  response: Record<string, unknown>,
-  proxyEvent: APIGatewayProxyEvent,
-  { debug: boolean },
-) => {
-  statusCode: 200 | 400;
-  body: string;
-} = (response: Record<string, unknown>, event, { debug = false }) => {
-  const resultResponseBody = {
-    ...(debug ? { event } : {}),
-    ...response,
-  };
-
-  return formatJSONResponse(400, resultResponseBody);
-};
-
-const formatJSONResponse = (statusCode: 200 | 400, response) => {
   return {
     statusCode,
-    body: JSON.stringify(response),
+    body: JSON.stringify(resultResponseBody),
   };
 };

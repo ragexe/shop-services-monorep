@@ -1,14 +1,30 @@
-import { Product } from '../../model';
-import products from '../../model/products.json';
+import { ErrorMessages, Product, SourceProvider } from '../../model';
+import jsonProducts from '../../model/products.json';
 
-const productList = [...(products as Product[])];
+const defaultProvider: SourceProvider<Product[]> = {
+  provide: () => jsonProducts as Product[],
+};
 
-export const getProductsById: (id: string | null | undefined) => Product[] = (
-  id,
-) => {
+export const getProductsById: (
+  id: string | null | undefined,
+  sourceProvider?: SourceProvider<Product[]>,
+) => Product[] = (id, sourceProvider = defaultProvider) => {
   if (id === null || id === undefined || typeof id !== 'string' || id === '') {
-    throw new Error('Bad id value!');
+    throw new Error(ErrorMessages.BadIdValue);
   }
 
-  return productList.filter((product) => product.id === id);
+  const productList = sourceProvider.provide();
+
+  if (productList === null) throw new Error(ErrorMessages.SomethingBadHappened);
+  if (productList === undefined)
+    throw new Error(ErrorMessages.SomethingBadHappened);
+  if (!Array.isArray(productList)) throw new Error(ErrorMessages.BadFormat);
+
+  const result: Product[] = productList.filter((product) => product.id === id);
+
+  if (result.length === 0) {
+    throw new Error(ErrorMessages.NotFound);
+  }
+
+  return result;
 };

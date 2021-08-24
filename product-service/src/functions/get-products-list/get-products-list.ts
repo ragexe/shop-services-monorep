@@ -1,4 +1,4 @@
-import { Product, SourceProvider } from '../../model';
+import { ErrorMessages, Product, SourceProvider } from '../../model';
 import jsonProducts from '../../model/products.json';
 
 const defaultProvider: SourceProvider<Product[]> = {
@@ -10,9 +10,11 @@ export const getProductsList: (
 ) => Product[] = (provider = defaultProvider) => {
   const resultProducts = provider.provide();
 
-  if (resultProducts === null) throw new Error('Something bad happened!');
-  if (resultProducts === undefined) throw new Error('Something bad happened!');
-  if (!Array.isArray(resultProducts)) throw new Error('Bad format!');
+  if (resultProducts === null)
+    throw new Error(ErrorMessages.SomethingBadHappened);
+  if (resultProducts === undefined)
+    throw new Error(ErrorMessages.SomethingBadHappened);
+  if (!Array.isArray(resultProducts)) throw new Error(ErrorMessages.BadFormat);
 
   return resultProducts;
 };
