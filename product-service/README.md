@@ -110,7 +110,7 @@ Any tsconfig.json can be used, but if you do, set the environment variable `TS_N
   "swagger" : "2.0",
   "info" : {
     "description" : "This is API based microservice to get mocked products",
-    "version" : "2021-08-24T08:51:37Z",
+    "version" : "2021-08-24T14:03:25Z",
     "title" : "product-service-dev",
     "contact" : {
       "name" : "ragexe",

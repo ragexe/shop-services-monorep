@@ -1,6 +1,6 @@
 import 'source-map-support/register';
 
-import { formatJSONResponse } from '@libs/apiGateway';
+import { formResponse200 } from '@libs/apiGateway';
 import { middyfy } from '@libs/lambda';
 import {
   APIGatewayProxyEvent,
@@ -15,14 +15,9 @@ import { getProductsById } from './get-products-by-id';
 const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   event,
 ) => {
-  const products: Product[] = getProductsById(event.queryStringParameters.id);
+  const products: Product[] = getProductsById(event?.queryStringParameters?.id);
 
-  const resultResponseBody = {
-    ...(isDebug(event) ? { event } : {}),
-    products,
-  };
-
-  return formatJSONResponse(resultResponseBody);
+  return formResponse200({ products }, event, { debug: isDebug(event) });
 };
 
 export const main = middyfy(handler);

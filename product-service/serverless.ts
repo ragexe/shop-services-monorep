@@ -1,5 +1,5 @@
-import getProductsById from '@functions/get-products-by-id';
-import getProductsList from '@functions/get-products-list';
+import getProductsById from './src/functions/get-products-by-id';
+import getProductsList from './src/functions/get-products-list';
 
 import { DOCUMENTATION_MODELS } from './serverless-documentation-models';
 

@@ -31,9 +31,13 @@ export interface Models {
       };
 }
 
+type TAWSFunctionEvent = NonNullable<
+  NonNullable<AWS['functions']>[string]['events']
+>[number];
+
 type TAWSFunctionHTTPEventWithDocumentation =
   | Extract<
-      AWS['functions'][string]['events'][number],
+      TAWSFunctionEvent,
       {
         http: any;
       }
@@ -42,9 +46,6 @@ type TAWSFunctionHTTPEventWithDocumentation =
         documentation?: Documentation;
       };
     };
-
-type TAWSFunctionEvent =
-  AWS['functions'][string]['events'][number];
 
 export type TAWSFunctionCustomEvent = (
   | TAWSFunctionEvent
