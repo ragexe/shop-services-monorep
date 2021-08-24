@@ -61,3 +61,5 @@ Reviewers (for Rolling Scopes Application only) should verify the lambda functio
 
 4. In case SWAGGER file is not provided - please provide product schema in PR description
 
+*[source](https://github.com/EPAM-JS-Competency-center/cloud-development-course-initial/blob/main/task3-product-magamanent-api/task.md
+)*
