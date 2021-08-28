@@ -55,6 +55,7 @@ describe('Lambda core getProductsById function', () => {
       getProductsById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', sourceProvider),
     ).toThrowError(Error(ErrorMessages.NotFound));
   });
+
   test('it should throw an error in case of invalid {id} param', () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {

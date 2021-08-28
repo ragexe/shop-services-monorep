@@ -15,6 +15,7 @@ const events: TAWSFunctionCustomEvent = [
           },
         },
       },
+      cors: true,
       documentation: {
         summary: 'Finds products with provided {id} and returns list of them',
         tags: ['product-service'],
@@ -35,19 +36,19 @@ const events: TAWSFunctionCustomEvent = [
               description: 'Successful operation',
             },
             responseModels: {
-              'application/json': 'Products',
+              'application/json': 'ProductsWrapper',
             },
           },
           {
             statusCode: '400',
             responseModels: {
-              'application/json': '400JsonResponse',
+              'application/json': 'JsonResponse400',
             },
           },
           {
             statusCode: '404',
             responseModels: {
-              'application/json': '404JsonResponse',
+              'application/json': 'JsonResponse404',
             },
           },
         ],

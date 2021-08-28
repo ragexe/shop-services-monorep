@@ -1,5 +1,18 @@
 const PRODUCT_MODELS = [
   {
+    name: 'ProductsWrapper',
+    description: '',
+    contentType: 'application/json',
+    schema: {
+      type: 'object',
+      properties: {
+        products: {
+          $ref: '{{model: Products}}',
+        },
+      },
+    },
+  },
+  {
     name: 'Products',
     description: '',
     contentType: 'application/json',
@@ -356,7 +369,7 @@ const REQUEST_MODELS = [];
 
 const RESPONSE_MODELS = [
   {
-    name: '400JsonResponse',
+    name: 'JsonResponse400',
     contentType: 'application/json',
     schema: {
       type: 'object',
@@ -371,7 +384,7 @@ const RESPONSE_MODELS = [
     },
   },
   {
-    name: '404JsonResponse',
+    name: 'JsonResponse404',
     contentType: 'application/json',
     schema: {
       type: 'object',

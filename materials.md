@@ -18,6 +18,7 @@
 
 - [Lecture 3](https://www.youtube.com/watch?v=BJwx3XQ9ZqI)
 - [Q&A Session 3](https://www.youtube.com/watch?v=5ymuKq_RpZQ)
+- [Q&A Session 3](https://www.youtube.com/watch?v=Jr2_SrIlCV0&ab_channel=RollingScopesSchool)
 ##### More detailed material on the 3rd task:
 Introductory basic theory on Lambda - https://videoportal.epam.com/video/elN67KV30zeZvdl0JVZz
 Basic Practice Example with Lambda and API Gateway - https://videoportal.epam.com/video/lNdwY9x6pwOnwgvpay2G

@@ -49,7 +49,7 @@ Reviewers (for Rolling Scopes Application only) should verify the lambda functio
 - **+1** **(All languages)** - Main error scenarious are handled by API ("Product not found" error).
 
 
-**TASK 3 description teamplate for PR creation:** (for Rolling Scopes Application only)
+**TASK 3 description template for PR creation:** (for Rolling Scopes Application only)
 
 1. What was done? 
    Example:

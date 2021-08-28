@@ -6,6 +6,7 @@
   "scripts": {
     "invoke:local": "npx sls invoke local -f getProductsList --path src/model/products.json",
     "test": "jest",
+    "info": "npx serverless info --verbose",
     "deploy": "npx serverless deploy",
     "swagger": "rm -rf swagger-api.json && npx serverless downloadDocumentation --outputFileName=swagger-api.json",
     "release": "npm run test && npm run deploy && npm run swagger"

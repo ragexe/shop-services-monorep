@@ -16,7 +16,7 @@ const serverlessConfiguration: AWS = {
     documentation: {
       api: {
         info: {
-          version: '2',
+          version: '4',
           title: 'Product Service API',
           description: 'This is API based microservice to get mocked products',
           contact: {

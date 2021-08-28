@@ -5,7 +5,7 @@
         "productCode": "60307",
         "name": "Wildlife Rescue Camp",
         "slug": "wildlife-rescue-camp-60307",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blta5df4c7fefc77490/60307.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blta5df4c7fefc77490/60307.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blta5df4c7fefc77490/60307.jpg",
         "overrideUrl": null,
         "variant": {
@@ -54,7 +54,7 @@
         "productCode": "60302",
         "name": "Wildlife Rescue Operation",
         "slug": "wildlife-rescue-operation-60302",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blte9bac4836b986ef9/60302.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blte9bac4836b986ef9/60302.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blte9bac4836b986ef9/60302.jpg",
         "overrideUrl": null,
         "variant": {
@@ -103,7 +103,7 @@
         "productCode": "60308",
         "name": "Seaside Police and Fire Mission",
         "slug": "seaside-police-and-fire-mission-60308",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8d37c1119b32a312/60308.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8d37c1119b32a312/60308.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8d37c1119b32a312/60308.jpg",
         "overrideUrl": null,
         "variant": {
@@ -152,7 +152,7 @@
         "productCode": "60301",
         "name": "Wildlife Rescue Off-Roader",
         "slug": "wildlife-rescue-off-roader-60301",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1be5efeb5a49df10/60301.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1be5efeb5a49df10/60301.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt1be5efeb5a49df10/60301.jpg",
         "overrideUrl": null,
         "variant": {
@@ -201,7 +201,7 @@
         "productCode": "60300",
         "name": "Wildlife Rescue ATV",
         "slug": "wildlife-rescue-atv-60300",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt9458f7f09499e4f1/60300.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt9458f7f09499e4f1/60300.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt9458f7f09499e4f1/60300.jpg",
         "overrideUrl": null,
         "variant": {
@@ -250,7 +250,7 @@
         "productCode": "60271",
         "name": "Main Square",
         "slug": "main-square-60271",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb30e9abc34ce1d8e/60271.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb30e9abc34ce1d8e/60271.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb30e9abc34ce1d8e/60271.jpg",
         "overrideUrl": null,
         "variant": {
@@ -299,7 +299,7 @@
         "productCode": "60197",
         "name": "Passenger Train",
         "slug": "passenger-train-60197",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt54edbbaa46b0761d/60197.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt54edbbaa46b0761d/60197.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt54edbbaa46b0761d/60197.jpg",
         "overrideUrl": null,
         "variant": {
@@ -342,7 +342,7 @@
         "productCode": "60198",
         "name": "Cargo Train",
         "slug": "cargo-train-60198",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt18158984a1b6b2bf/60198.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt18158984a1b6b2bf/60198.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt18158984a1b6b2bf/60198.jpg",
         "overrideUrl": null,
         "variant": {
@@ -385,7 +385,7 @@
         "productCode": "60266",
         "name": "Ocean Exploration Ship",
         "slug": "ocean-exploration-ship-60266",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt6130ca939499b9ad/60266.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt6130ca939499b9ad/60266.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt6130ca939499b9ad/60266.jpg",
         "overrideUrl": null,
         "variant": {
@@ -428,7 +428,7 @@
         "productCode": "60229",
         "name": "Rocket Assembly & Transport",
         "slug": "rocket-assembly-transport-60229",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1f5014102a6c5d9a/60229.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1f5014102a6c5d9a/60229.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt1f5014102a6c5d9a/60229.jpg",
         "overrideUrl": null,
         "variant": {
@@ -471,7 +471,7 @@
         "productCode": "60228",
         "name": "Deep Space Rocket and Launch Control",
         "slug": "deep-space-rocket-and-launch-control-60228",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt328778fddf465431/60228.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt328778fddf465431/60228.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt328778fddf465431/60228.jpg",
         "overrideUrl": null,
         "variant": {
@@ -514,7 +514,7 @@
         "productCode": "60216",
         "name": "Downtown Fire Brigade",
         "slug": "downtown-fire-brigade-60216",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt87833ee430babe68/60216.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt87833ee430babe68/60216.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt87833ee430babe68/60216.jpg",
         "overrideUrl": null,
         "variant": {
@@ -557,7 +557,7 @@
         "productCode": "60262",
         "name": "Passenger Airplane",
         "slug": "passenger-airplane-60262",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt173b47130402fa82/60262.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt173b47130402fa82/60262.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt173b47130402fa82/60262.jpg",
         "overrideUrl": null,
         "variant": {
@@ -600,7 +600,7 @@
         "productCode": "60246",
         "name": "Police Station",
         "slug": "police-station-60246",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt03b83a89e42d9e0a/60246.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt03b83a89e42d9e0a/60246.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt03b83a89e42d9e0a/60246.jpg",
         "overrideUrl": null,
         "variant": {
@@ -643,7 +643,7 @@
         "productCode": "60292",
         "name": "Town Center",
         "slug": "town-center-60292",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt42cc92012f6bb666/60292.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt42cc92012f6bb666/60292.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt42cc92012f6bb666/60292.jpg",
         "overrideUrl": null,
         "variant": {
@@ -686,7 +686,7 @@
         "productCode": "60258",
         "name": "Tuning Workshop",
         "slug": "tuning-workshop-60258",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb84bcc5e20994fb4/60258.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb84bcc5e20994fb4/60258.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb84bcc5e20994fb4/60258.jpg",
         "overrideUrl": null,
         "variant": {
@@ -729,7 +729,7 @@
         "productCode": "60265",
         "name": "Ocean Exploration Base",
         "slug": "ocean-exploration-base-60265",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb9554150423534a5/60265.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb9554150423534a5/60265.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb9554150423534a5/60265.jpg",
         "overrideUrl": null,
         "variant": {
@@ -772,7 +772,7 @@
         "productCode": "60306",
         "name": "Shopping Street",
         "slug": "shopping-street-60306",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt7b8198585d97093c/60306.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt7b8198585d97093c/60306.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt7b8198585d97093c/60306.jpg",
         "overrideUrl": null,
         "variant": {
@@ -815,7 +815,7 @@
         "productCode": "60261",
         "name": "Central Airport",
         "slug": "central-airport-60261",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt990dbb1e7a6b5ee5/60261.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt990dbb1e7a6b5ee5/60261.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt990dbb1e7a6b5ee5/60261.jpg",
         "overrideUrl": null,
         "variant": {
@@ -858,7 +858,7 @@
         "productCode": "60291",
         "name": "Family House",
         "slug": "family-house-60291",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltbd6c12074c1122a8/60291.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltbd6c12074c1122a8/60291.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltbd6c12074c1122a8/60291.jpg",
         "overrideUrl": null,
         "variant": {
@@ -901,7 +901,7 @@
         "productCode": "60282",
         "name": "Fire Command Unit",
         "slug": "fire-command-unit-60282",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt82f45d05e0b8e13e/60282.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt82f45d05e0b8e13e/60282.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt82f45d05e0b8e13e/60282.jpg",
         "overrideUrl": null,
         "variant": {
@@ -944,7 +944,7 @@
         "productCode": "60245",
         "name": "Police Monster Truck Heist",
         "slug": "police-monster-truck-heist-60245",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt6bd893360d89df39/60245.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt6bd893360d89df39/60245.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt6bd893360d89df39/60245.jpg",
         "overrideUrl": null,
         "variant": {
@@ -987,7 +987,7 @@
         "productCode": "60277",
         "name": "Police Patrol Boat",
         "slug": "police-patrol-boat-60277",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltac259154458edd60/60277.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltac259154458edd60/60277.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltac259154458edd60/60277.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1030,7 +1030,7 @@
         "productCode": "60139",
         "name": "Mobile Command Center",
         "slug": "mobile-command-center-60139",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc787e8e0194fdc33/60139.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc787e8e0194fdc33/60139.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltc787e8e0194fdc33/60139.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1073,7 +1073,7 @@
         "productCode": "60244",
         "name": "Police Helicopter Transport",
         "slug": "police-helicopter-transport-60244",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt7503801083a45d7c/60244.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt7503801083a45d7c/60244.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt7503801083a45d7c/60244.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1116,7 +1116,7 @@
         "productCode": "60260",
         "name": "Air Race",
         "slug": "air-race-60260",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt75965dcb95882bfb/60260.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt75965dcb95882bfb/60260.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt75965dcb95882bfb/60260.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1159,7 +1159,7 @@
         "productCode": "60214",
         "name": "Burger Bar Fire Rescue",
         "slug": "burger-bar-fire-rescue-60214",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltd0bb70f85eaa6b5c/60214.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltd0bb70f85eaa6b5c/60214.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltd0bb70f85eaa6b5c/60214.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1202,7 +1202,7 @@
         "productCode": "60281",
         "name": "Fire Rescue Helicopter",
         "slug": "fire-rescue-helicopter-60281",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt07049ef9c654fffb/60281.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt07049ef9c654fffb/60281.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt07049ef9c654fffb/60281.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1245,7 +1245,7 @@
         "productCode": "60226",
         "name": "Mars Research Shuttle",
         "slug": "mars-research-shuttle-60226",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt0b7f680af89d66b4/60226.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt0b7f680af89d66b4/60226.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt0b7f680af89d66b4/60226.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1288,7 +1288,7 @@
         "productCode": "60264",
         "name": "Ocean Exploration Submarine",
         "slug": "ocean-exploration-submarine-60264",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1654deb05b7b7130/60264.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1654deb05b7b7130/60264.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt1654deb05b7b7130/60264.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1331,7 +1331,7 @@
         "productCode": "60243",
         "name": "Police Helicopter Chase",
         "slug": "police-helicopter-chase-60243",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt285f79d3902dab6c/60243.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt285f79d3902dab6c/60243.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt285f79d3902dab6c/60243.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1374,7 +1374,7 @@
         "productCode": "60290",
         "name": "Skate Park",
         "slug": "skate-park-60290",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt19d3ffb75790b2cd/60290.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt19d3ffb75790b2cd/60290.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt19d3ffb75790b2cd/60290.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1417,7 +1417,7 @@
         "productCode": "60289",
         "name": "Airshow Jet Transporter",
         "slug": "airshow-jet-transporter-60289",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt5fa06d6092c5a83e/60289.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt5fa06d6092c5a83e/60289.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt5fa06d6092c5a83e/60289.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1460,7 +1460,7 @@
         "productCode": "60305",
         "name": "Car Transporter",
         "slug": "car-transporter-60305",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt118d28bc9deb19a1/60305.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt118d28bc9deb19a1/60305.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt118d28bc9deb19a1/60305.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1503,7 +1503,7 @@
         "productCode": "60274",
         "name": "Police Lighthouse Capture",
         "slug": "elite-police-lighthouse-capture-60274",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1546,7 +1546,7 @@
         "productCode": "60248",
         "name": "Fire Helicopter Response",
         "slug": "fire-helicopter-response-60248",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc03d924360906e9a/60248.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc03d924360906e9a/60248.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltc03d924360906e9a/60248.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1589,7 +1589,7 @@
         "productCode": "60280",
         "name": "Fire Ladder Truck",
         "slug": "fire-ladder-truck-60280",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1091e313ecb77658/60280.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1091e313ecb77658/60280.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt1091e313ecb77658/60280.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1632,7 +1632,7 @@
         "productCode": "60242",
         "name": "Police Highway Arrest",
         "slug": "police-highway-arrest-60242",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt64c9e185015e4acd/60242.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt64c9e185015e4acd/60242.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt64c9e185015e4acd/60242.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1675,7 +1675,7 @@
         "productCode": "60276",
         "name": "Police Prisoner Transport",
         "slug": "police-prisoner-transport-60276",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc2cfeb843ff9d71a/60276.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc2cfeb843ff9d71a/60276.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltc2cfeb843ff9d71a/60276.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1718,7 +1718,7 @@
         "productCode": "60254",
         "name": "Race Boat Transporter",
         "slug": "race-boat-transporter-60254",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt285ddcfce73f8442/60254.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt285ddcfce73f8442/60254.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt285ddcfce73f8442/60254.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1761,7 +1761,7 @@
         "productCode": "60256",
         "name": "Racing Cars",
         "slug": "racing-cars-60256",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf9b362843da0fabe/60256.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf9b362843da0fabe/60256.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf9b362843da0fabe/60256.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1804,7 +1804,7 @@
         "productCode": "60252",
         "name": "Construction Bulldozer",
         "slug": "construction-bulldozer-60252",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt0a71e7e9612b8ad5/60252.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt0a71e7e9612b8ad5/60252.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt0a71e7e9612b8ad5/60252.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1847,7 +1847,7 @@
         "productCode": "60221",
         "name": "Diving Yacht",
         "slug": "diving-yacht-60221",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3f88297de4335012/60221.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3f88297de4335012/60221.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3f88297de4335012/60221.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1890,7 +1890,7 @@
         "productCode": "60220",
         "name": "Garbage Truck",
         "slug": "garbage-truck-60220",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1a2e22d4765ed2dc/60220.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt1a2e22d4765ed2dc/60220.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt1a2e22d4765ed2dc/60220.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1933,7 +1933,7 @@
         "productCode": "60283",
         "name": "Holiday Camper Van",
         "slug": "holiday-camper-van-60283",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt02c69ce2e75edbf5/60283.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt02c69ce2e75edbf5/60283.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt02c69ce2e75edbf5/60283.jpg",
         "overrideUrl": null,
         "variant": {
@@ -1976,7 +1976,7 @@
         "productCode": "60253",
         "name": "Ice-Cream Truck",
         "slug": "ice-cream-truck-60253",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt136fb371e68cccbd/60253.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt136fb371e68cccbd/60253.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt136fb371e68cccbd/60253.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2019,7 +2019,7 @@
         "productCode": "60288",
         "name": "Race Buggy Transporter",
         "slug": "race-buggy-transporter-60288",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt545518df56836e7f/60288.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt545518df56836e7f/60288.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt545518df56836e7f/60288.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2062,7 +2062,7 @@
         "productCode": "60304",
         "name": "Road Plates",
         "slug": "road-plates-60304",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt46e248e8f0fcec94/60304.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt46e248e8f0fcec94/60304.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt46e248e8f0fcec94/60304.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2105,7 +2105,7 @@
         "productCode": "60267",
         "name": "Safari Off-Roader",
         "slug": "safari-off-roader-60267",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltdfaac16e20a6109b/60267.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltdfaac16e20a6109b/60267.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltdfaac16e20a6109b/60267.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2148,7 +2148,7 @@
         "productCode": "60205",
         "name": "Tracks",
         "slug": "tracks-60205",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt05dd2e8802f45f28/60205.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt05dd2e8802f45f28/60205.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt05dd2e8802f45f28/60205.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2191,7 +2191,7 @@
         "productCode": "60287",
         "name": "Tractor",
         "slug": "tractor-60287",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8869ab93cdddba2a/60287.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8869ab93cdddba2a/60287.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8869ab93cdddba2a/60287.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2234,7 +2234,7 @@
         "productCode": "60286",
         "name": "Beach Rescue ATV",
         "slug": "beach-rescue-atv-60286",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt14de9b092607fb26/60286.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt14de9b092607fb26/60286.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt14de9b092607fb26/60286.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2277,7 +2277,7 @@
         "productCode": "60279",
         "name": "Fire Hazard Truck",
         "slug": "fire-hazard-truck-60279",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8db23c92f19efc81/60279.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8db23c92f19efc81/60279.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8db23c92f19efc81/60279.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2320,7 +2320,7 @@
         "productCode": "60251",
         "name": "Monster Truck",
         "slug": "monster-truck-60251",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb0c66b3ee98d7192/60251.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb0c66b3ee98d7192/60251.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb0c66b3ee98d7192/60251.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2363,7 +2363,7 @@
         "productCode": "60263",
         "name": "Ocean Mini-Submarine",
         "slug": "ocean-mini-submarine-60263",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf5a16bb5e52098e0/60263.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf5a16bb5e52098e0/60263.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf5a16bb5e52098e0/60263.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2406,7 +2406,7 @@
         "productCode": "60241",
         "name": "Police Dog Unit",
         "slug": "police-dog-unit-60241",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3dc3da9ef79f63cd/60241.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3dc3da9ef79f63cd/60241.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3dc3da9ef79f63cd/60241.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2449,7 +2449,7 @@
         "productCode": "60275",
         "name": "Police Helicopter",
         "slug": "police-helicopter-60275",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf3a8249e73d05b01/60275.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf3a8249e73d05b01/60275.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf3a8249e73d05b01/60275.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2492,7 +2492,7 @@
         "productCode": "60239",
         "name": "Police Patrol Car",
         "slug": "police-patrol-car-60239",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt4bef815818c0842b/60239.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt4bef815818c0842b/60239.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt4bef815818c0842b/60239.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2535,7 +2535,7 @@
         "productCode": "60284",
         "name": "Roadwork Truck",
         "slug": "roadwork-truck-60284",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blte745807382afadfc/60284.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blte745807382afadfc/60284.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blte745807382afadfc/60284.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2578,7 +2578,7 @@
         "productCode": "60285",
         "name": "Sports Car",
         "slug": "sports-car-60285",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltd5c5144a5a18a027/60285.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltd5c5144a5a18a027/60285.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltd5c5144a5a18a027/60285.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2621,7 +2621,7 @@
         "productCode": "60249",
         "name": "Street Sweeper",
         "slug": "street-sweeper-60249",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt71dcbee95ced24a8/60249.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt71dcbee95ced24a8/60249.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt71dcbee95ced24a8/60249.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2664,7 +2664,7 @@
         "productCode": "60270",
         "name": "Police Brick Box",
         "slug": "police-brick-box-60270",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3b105c6325ac3a8d/60270.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3b105c6325ac3a8d/60270.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3b105c6325ac3a8d/60270.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2707,7 +2707,7 @@
         "productCode": "60238",
         "name": "Switch Tracks",
         "slug": "switch-tracks-60238",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blta1ba001b11b48283/60238.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blta1ba001b11b48283/60238.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blta1ba001b11b48283/60238.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2750,7 +2750,7 @@
         "productCode": "60247",
         "name": "Forest Fire",
         "slug": "forest-fire-60247",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltdd96ca9eb232dc70/60247.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltdd96ca9eb232dc70/60247.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltdd96ca9eb232dc70/60247.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2793,7 +2793,7 @@
         "productCode": "60250",
         "name": "Mail Plane",
         "slug": "mail-plane-60250",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt83e4a6f3bc03295a/60250.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt83e4a6f3bc03295a/60250.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt83e4a6f3bc03295a/60250.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2836,7 +2836,7 @@
         "productCode": "60295",
         "name": "Stunt Show Arena",
         "slug": "stunt-show-arena-60295",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blte8090876d4d3d74a/60295.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blte8090876d4d3d74a/60295.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blte8090876d4d3d74a/60295.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2885,7 +2885,7 @@
         "productCode": "60294",
         "name": "Stunt Show Truck",
         "slug": "stunt-show-truck-60294",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blta2dc365bd20334af/60294.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blta2dc365bd20334af/60294.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blta2dc365bd20334af/60294.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2934,7 +2934,7 @@
         "productCode": "60293",
         "name": "Stunt Park",
         "slug": "stunt-park-60293",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt9695fba982d0261b/60293.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt9695fba982d0261b/60293.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt9695fba982d0261b/60293.jpg",
         "overrideUrl": null,
         "variant": {
@@ -2983,7 +2983,7 @@
         "productCode": "60303",
         "name": "LEGO® City Advent Calendar",
         "slug": "lego-city-advent-calendar-60303",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blte8083bf1a8f1132d/60303_alt1.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blte8083bf1a8f1132d/60303_alt1.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blte8083bf1a8f1132d/60303_alt1.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3032,7 +3032,7 @@
         "productCode": "60299",
         "name": "Stunt Competition",
         "slug": "stunt-competition-60299",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blta346b26b728c66b7/60299.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blta346b26b728c66b7/60299.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blta346b26b728c66b7/60299.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3081,7 +3081,7 @@
         "productCode": "60310",
         "name": "Chicken Stunt Bike",
         "slug": "chicken-stunt-bike-60310",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt68b84b521c7fed66/60310.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt68b84b521c7fed66/60310.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt68b84b521c7fed66/60310.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3130,7 +3130,7 @@
         "productCode": "60297",
         "name": "Demolition Stunt Bike",
         "slug": "demolition-stunt-bike-60297",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt0a8d363722ba240a/60297.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt0a8d363722ba240a/60297.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt0a8d363722ba240a/60297.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3179,7 +3179,7 @@
         "productCode": "60311",
         "name": "Fire Stunt Bike",
         "slug": "fire-stunt-bike-60311",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3c4d9dcd90aa85e0/60311.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3c4d9dcd90aa85e0/60311.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3c4d9dcd90aa85e0/60311.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3228,7 +3228,7 @@
         "productCode": "60298",
         "name": "Rocket Stunt Bike",
         "slug": "rocket-stunt-bike-60298",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt35575383a1a2bc94/60298.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt35575383a1a2bc94/60298.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt35575383a1a2bc94/60298.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3277,7 +3277,7 @@
         "productCode": "60309",
         "name": "Selfie Stunt Bike",
         "slug": "selfie-stunt-bike-60309",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt435ef55006873e23/60309.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt435ef55006873e23/60309.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt435ef55006873e23/60309.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3326,7 +3326,7 @@
         "productCode": "60296",
         "name": "Wheelie Stunt Bike",
         "slug": "wheelie-stunt-bike-60296",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt396673fa1fe2a756/60296.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt396673fa1fe2a756/60296.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt396673fa1fe2a756/60296.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3375,7 +3375,7 @@
         "productCode": "5005731",
         "name": "LEGO® City Busy Word Book",
         "slug": "lego-city-busy-word-book-5005731",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3d152a51089bd4b3/5005731.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3d152a51089bd4b3/5005731.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3d152a51089bd4b3/5005731.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3418,7 +3418,7 @@
         "productCode": "60215",
         "name": "Fire Station",
         "slug": "fire-station-60215",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltee7e195a078afb85/60215.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltee7e195a078afb85/60215.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltee7e195a078afb85/60215.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3461,7 +3461,7 @@
         "productCode": "60272",
         "name": "Police Boat Transport",
         "slug": "elite-police-boat-transport-60272",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf1ab463cd159398c/60272.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf1ab463cd159398c/60272.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf1ab463cd159398c/60272.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3504,7 +3504,7 @@
         "productCode": "60273",
         "name": "Police Driller Chase",
         "slug": "elite-police-driller-chase-60273",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc46d7cfdcb7cf143/60273.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc46d7cfdcb7cf143/60273.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltc46d7cfdcb7cf143/60273.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3547,7 +3547,7 @@
         "productCode": "40372",
         "name": "Police MF Accessory Set",
         "slug": "police-mf-accessory-set-40372",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8926885b90f83c69/40372.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8926885b90f83c69/40372.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8926885b90f83c69/40372.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3590,7 +3590,7 @@
         "productCode": "60206",
         "name": "Sky Police Jet Patrol",
         "slug": "sky-police-jet-patrol-60206",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltfa4ef2067b47d31e/60206.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltfa4ef2067b47d31e/60206.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltfa4ef2067b47d31e/60206.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3633,7 +3633,7 @@
         "productCode": "853919",
         "name": "City Police Vest",
         "slug": "city-police-vest-853919",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb7485536420d9ff9/853919.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb7485536420d9ff9/853919.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb7485536420d9ff9/853919.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3676,7 +3676,7 @@
         "productCode": "30369",
         "name": "Beach Buggy",
         "slug": "beach-buggy-30369",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt438830e9e0a258f1/30369.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt438830e9e0a258f1/30369.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt438830e9e0a258f1/30369.jpg",
         "overrideUrl": null,
         "variant": {
@@ -3719,7 +3719,7 @@
         "productCode": "30365",
         "name": "Space Satellite",
         "slug": "space-satellite-30365",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltcbc385dd3f66ccb1/30365.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltcbc385dd3f66ccb1/30365.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltcbc385dd3f66ccb1/30365.jpg",
         "overrideUrl": null,
         "variant": {

@@ -5,7 +5,7 @@
         "productCode": "60242",
         "name": "Police Highway Arrest",
         "slug": "police-highway-arrest-60242",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt64c9e185015e4acd/60242.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt64c9e185015e4acd/60242.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt64c9e185015e4acd/60242.jpg",
         "overrideUrl": null,
         "variant": {
@@ -48,7 +48,7 @@
         "productCode": "60276",
         "name": "Police Prisoner Transport",
         "slug": "police-prisoner-transport-60276",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc2cfeb843ff9d71a/60276.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc2cfeb843ff9d71a/60276.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltc2cfeb843ff9d71a/60276.jpg",
         "overrideUrl": null,
         "variant": {
@@ -91,7 +91,7 @@
         "productCode": "60254",
         "name": "Race Boat Transporter",
         "slug": "race-boat-transporter-60254",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt285ddcfce73f8442/60254.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt285ddcfce73f8442/60254.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt285ddcfce73f8442/60254.jpg",
         "overrideUrl": null,
         "variant": {
@@ -134,7 +134,7 @@
         "productCode": "60256",
         "name": "Racing Cars",
         "slug": "racing-cars-60256",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf9b362843da0fabe/60256.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf9b362843da0fabe/60256.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf9b362843da0fabe/60256.jpg",
         "overrideUrl": null,
         "variant": {
@@ -177,7 +177,7 @@
         "productCode": "60221",
         "name": "Diving Yacht",
         "slug": "diving-yacht-60221",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3f88297de4335012/60221.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3f88297de4335012/60221.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3f88297de4335012/60221.jpg",
         "overrideUrl": null,
         "variant": {
@@ -220,7 +220,7 @@
         "productCode": "60287",
         "name": "Tractor",
         "slug": "tractor-60287",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8869ab93cdddba2a/60287.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8869ab93cdddba2a/60287.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8869ab93cdddba2a/60287.jpg",
         "overrideUrl": null,
         "variant": {
@@ -263,7 +263,7 @@
         "productCode": "60279",
         "name": "Fire Hazard Truck",
         "slug": "fire-hazard-truck-60279",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8db23c92f19efc81/60279.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8db23c92f19efc81/60279.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8db23c92f19efc81/60279.jpg",
         "overrideUrl": null,
         "variant": {
@@ -306,7 +306,7 @@
         "productCode": "60251",
         "name": "Monster Truck",
         "slug": "monster-truck-60251",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb0c66b3ee98d7192/60251.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb0c66b3ee98d7192/60251.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb0c66b3ee98d7192/60251.jpg",
         "overrideUrl": null,
         "variant": {
@@ -349,7 +349,7 @@
         "productCode": "60241",
         "name": "Police Dog Unit",
         "slug": "police-dog-unit-60241",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3dc3da9ef79f63cd/60241.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3dc3da9ef79f63cd/60241.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3dc3da9ef79f63cd/60241.jpg",
         "overrideUrl": null,
         "variant": {
@@ -392,7 +392,7 @@
         "productCode": "60275",
         "name": "Police Helicopter",
         "slug": "police-helicopter-60275",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf3a8249e73d05b01/60275.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf3a8249e73d05b01/60275.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf3a8249e73d05b01/60275.jpg",
         "overrideUrl": null,
         "variant": {
@@ -435,7 +435,7 @@
         "productCode": "60239",
         "name": "Police Patrol Car",
         "slug": "police-patrol-car-60239",
-        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt4bef815818c0842b/60239.jpg?fit=bounds&format=jpg&quality=80&width=320&height=320&dpr=1",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt4bef815818c0842b/60239.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
         "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt4bef815818c0842b/60239.jpg",
         "overrideUrl": null,
         "variant": {

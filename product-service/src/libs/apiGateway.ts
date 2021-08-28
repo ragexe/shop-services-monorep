@@ -4,9 +4,11 @@ import type {
   Handler,
 } from 'aws-lambda';
 import type { FromSchema } from 'json-schema-to-ts';
+
 type ValidatedAPIGatewayProxyEvent<S> = Omit<APIGatewayProxyEvent, 'body'> & {
   body: FromSchema<S>;
 };
+
 export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<
   ValidatedAPIGatewayProxyEvent<S>,
   APIGatewayProxyResult
@@ -31,11 +33,13 @@ export const formResponse200: TFormResponse = (
   event,
   { debug = false },
 ) => formResponse(200, response, event, { debug });
+
 export const formResponse400: TFormResponse = (
   response: Record<string, unknown>,
   event,
   { debug = false },
 ) => formResponse(400, response, event, { debug });
+
 export const formResponse404: TFormResponse = (
   response: Record<string, unknown>,
   event,
@@ -58,6 +62,10 @@ const formResponse: (
 
   return {
     statusCode,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+    },
     body: JSON.stringify(resultResponseBody),
   };
 };
