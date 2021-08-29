@@ -23,7 +23,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   let products: Product[];
 
   try {
-    products = getProductsById(event?.queryStringParameters?.id);
+    products = await getProductsById(event?.queryStringParameters?.id);
   } catch (error) {
     switch (error.message) {
       case ErrorMessages.NotFound:

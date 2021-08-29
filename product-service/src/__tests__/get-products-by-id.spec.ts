@@ -3,68 +3,85 @@ import { ErrorMessages, Product, SourceProvider } from './../model';
 import productsMocks from './mock-products.json';
 
 describe('Lambda core getProductsById function', () => {
-  test('it should return all products with requested {id}', () => {
+  test('it should return all products with requested {id}', async () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {
-        return productsMocks as Product[];
+        return Promise.resolve(productsMocks as Product[]);
       },
     };
 
     const expectedSlug: string[] = ['diving-yacht-60221'];
+    const products = await getProductsById(
+      'a26fe798-c31b-430f-8761-cf0710c67635',
+      sourceProvider,
+    );
+    const resultSlug = products.map((product) => product.slug);
 
-    expect(
-      getProductsById(
-        'a26fe798-c31b-430f-8761-cf0710c67635',
-        sourceProvider,
-      ).map((product) => product.slug),
-    ).toEqual(expectedSlug);
+    expect(resultSlug).toEqual(expectedSlug);
   });
 
-  test('it should throw error inb case of empty data', () => {
+  test('it should throw error inb case of empty data', async () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {
-        return null;
+        return Promise.resolve(null);
       },
     };
 
-    expect(() =>
-      getProductsById('a26fe798-c31b-430f-8761-cf0710c67635', sourceProvider),
-    ).toThrowError(Error(ErrorMessages.SomethingBadHappened));
+    try {
+      await getProductsById(
+        'a26fe798-c31b-430f-8761-cf0710c67635',
+        sourceProvider,
+      );
+    } catch (error) {
+      expect(error.message).toEqual(ErrorMessages.SomethingBadHappened);
+    }
   });
 
-  test('it should throw error in case of wrong data format', () => {
+  test('it should throw error in case of wrong data format', async () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {
         return JSON.parse(`{}`);
       },
     };
 
-    expect(() =>
-      getProductsById('a26fe798-c31b-430f-8761-cf0710c67635', sourceProvider),
-    ).toThrowError(Error(ErrorMessages.BadFormat));
+    try {
+      await getProductsById(
+        'a26fe798-c31b-430f-8761-cf0710c67635',
+        sourceProvider,
+      );
+    } catch (error) {
+      expect(error.message).toEqual(ErrorMessages.BadFormat);
+    }
   });
 
-  test('it should throw a not-found-error if the specified object does not exist', () => {
+  test('it should throw a not-found-error if the specified object does not exist', async () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {
-        return productsMocks as Product[];
+        return Promise.resolve(productsMocks as Product[]);
       },
     };
 
-    expect(() =>
-      getProductsById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', sourceProvider),
-    ).toThrowError(Error(ErrorMessages.NotFound));
+    try {
+      await getProductsById(
+        'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+        sourceProvider,
+      );
+    } catch (error) {
+      expect(error.message).toEqual(ErrorMessages.NotFound);
+    }
   });
 
-  test('it should throw an error in case of invalid {id} param', () => {
+  test('it should throw an error in case of invalid {id} param', async () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {
-        return productsMocks as Product[];
+        return Promise.resolve(productsMocks as Product[]);
       },
     };
 
-    expect(() => getProductsById('', sourceProvider)).toThrowError(
-      Error(ErrorMessages.BadIdValue),
-    );
+    try {
+      await getProductsById('', sourceProvider);
+    } catch (error) {
+      expect(error.message).toEqual(ErrorMessages.BadIdValue);
+    }
   });
 });

@@ -3,10 +3,10 @@ import { ErrorMessages, Product, SourceProvider } from './../model';
 import productsMocks from './mock-products.json';
 
 describe('Lambda core getProductsList function', () => {
-  test('it should return all available products', () => {
+  test('it should return all available products', async () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {
-        return productsMocks as Product[];
+        return Promise.resolve(productsMocks as Product[]);
       },
     };
 
@@ -23,33 +23,37 @@ describe('Lambda core getProductsList function', () => {
       'c7e85f80-ca96-44d9-bdc0-ecd0b34d7e20',
       '2e99813d-6e14-4d6c-a731-827e22687c48',
     ];
+    const results = await getProductsList(sourceProvider);
+    const resultOutputIds = results.map((product) => product.id);
 
-    expect(
-      getProductsList(sourceProvider).map((product) => product.id),
-    ).toEqual(expectedOutputIds);
+    expect(resultOutputIds).toEqual(expectedOutputIds);
   });
 
-  test('it should throw error inb case of empty data', () => {
+  test('it should throw error inb case of empty data', async () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {
-        return null;
+        return Promise.resolve(null);
       },
     };
 
-    expect(() => getProductsList(sourceProvider)).toThrowError(
-      Error(ErrorMessages.SomethingBadHappened),
-    );
+    try {
+      await getProductsList(sourceProvider);
+    } catch (error) {
+      expect(error.message).toEqual(ErrorMessages.SomethingBadHappened);
+    }
   });
 
-  test('it should throw error inb case of wrong data format', () => {
+  test('it should throw error in case of wrong data format', async () => {
     const sourceProvider: SourceProvider<Product[]> = {
       provide: () => {
-        return JSON.parse(`{}`);
+        return Promise.resolve(JSON.parse(`{}`));
       },
     };
 
-    expect(() => getProductsList(sourceProvider)).toThrowError(
-      Error(ErrorMessages.BadFormat),
-    );
+    try {
+      await getProductsList(sourceProvider);
+    } catch (error) {
+      expect(error.message).toEqual(ErrorMessages.BadFormat);
+    }
   });
 });

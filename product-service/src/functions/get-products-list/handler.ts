@@ -18,7 +18,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   let products: Product[];
 
   try {
-    products = getProductsList();
+    products = await getProductsList();
   } catch (error) {
     return formResponse400({ error: error, message: error.message }, event, {
       debug: isDebug(event),

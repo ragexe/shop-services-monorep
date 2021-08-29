@@ -2,23 +2,26 @@ import { ErrorMessages, Product, SourceProvider } from '../../model';
 import jsonProducts from '../../model/products.json';
 
 const defaultProvider: SourceProvider<Product[]> = {
-  provide: () => jsonProducts as Product[],
+  provide: () => Promise.resolve(jsonProducts as Product[]),
 };
 
 export const getProductsById: (
   id: string | null | undefined,
   sourceProvider?: SourceProvider<Product[]>,
-) => Product[] = (id, sourceProvider = defaultProvider) => {
+) => Promise<Product[]> = async (id, sourceProvider = defaultProvider) => {
   if (id === null || id === undefined || typeof id !== 'string' || id === '') {
     throw new Error(ErrorMessages.BadIdValue);
   }
 
-  const productList = sourceProvider.provide();
+  const productList = await sourceProvider.provide();
 
-  if (productList === null) throw new Error(ErrorMessages.SomethingBadHappened);
-  if (productList === undefined)
+  if (productList === null || productList === undefined) {
     throw new Error(ErrorMessages.SomethingBadHappened);
-  if (!Array.isArray(productList)) throw new Error(ErrorMessages.BadFormat);
+  }
+
+  if (!Array.isArray(productList)) {
+    throw new Error(ErrorMessages.BadFormat);
+  }
 
   const result: Product[] = productList.filter((product) => product.id === id);
 

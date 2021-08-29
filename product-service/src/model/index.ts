@@ -1,5 +1,5 @@
 export interface SourceProvider<T> {
-  provide: () => T | null | undefined;
+  provide: () => Promise<T | null | undefined>;
 }
 
 export enum ErrorMessages {
