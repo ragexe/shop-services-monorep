@@ -15,52 +15,52 @@ export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<
 >;
 
 type TSupportedStatusCodes = 200 | 400 | 404;
-type TFormResponse = (
-  response: Record<string, unknown>,
-  event: any,
-  {
-    debug,
-  }: {
-    debug?: boolean | undefined;
-  },
-) => {
+type TOptions = {
+  debug: boolean;
+};
+type TResponse = {
   statusCode: TSupportedStatusCodes;
+  headers: {
+    'Access-Control-Allow-Origin': string;
+    'Access-Control-Allow-Credentials': boolean;
+  };
   body: string;
 };
 
-export const formResponse200: TFormResponse = (
-  response: Record<string, unknown>,
-  event,
-  { debug = false },
-) => formResponse(200, response, event, { debug });
+export const formResponse200 = (
+  payload: Record<string, unknown>,
+  event: APIGatewayProxyEvent,
+  { debug = false }: Partial<TOptions>,
+) => formResponse(200, payload, event, { debug });
 
-export const formResponse400: TFormResponse = (
-  response: Record<string, unknown>,
-  event,
-  { debug = false },
-) => formResponse(400, response, event, { debug });
-
-export const formResponse404: TFormResponse = (
-  response: Record<string, unknown>,
-  event,
-  { debug = false },
-) => formResponse(404, response, event, { debug });
-
-const formResponse: (
-  statusCode: TSupportedStatusCodes,
-  response: Record<string, unknown>,
-  proxyEvent: APIGatewayProxyEvent,
-  { debug: boolean },
+export const formResponse400 = (
+  payload: Record<string, unknown>,
+  event: APIGatewayProxyEvent,
+  { debug = false }: Partial<TOptions>,
 ) => {
-  statusCode: TSupportedStatusCodes;
-  body: string;
-} = (statusCode, response, event, { debug = false }) => {
+  return formResponse(400, payload, event, { debug });
+};
+
+export const formResponse404 = (
+  payload: Record<string, unknown>,
+  event: APIGatewayProxyEvent,
+  { debug = false }: Partial<TOptions>,
+) => {
+  return formResponse(404, payload, event, { debug });
+};
+
+const formResponse = (
+  statusCode: TSupportedStatusCodes,
+  payload: Record<string, unknown>,
+  event: APIGatewayProxyEvent,
+  { debug }: TOptions,
+) => {
   const resultResponseBody = {
     ...(debug ? { event } : {}),
-    ...response,
+    ...payload,
   };
 
-  return {
+  const result: TResponse = {
     statusCode,
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -68,4 +68,6 @@ const formResponse: (
     },
     body: JSON.stringify(resultResponseBody),
   };
+
+  return result;
 };

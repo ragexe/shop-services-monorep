@@ -21,6 +21,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   event,
 ) => {
   let products: Product[];
+
   try {
     products = getProductsById(event?.queryStringParameters?.id);
   } catch (error) {
@@ -33,6 +34,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
             debug: isDebug(event),
           },
         );
+
       case ErrorMessages.SomethingBadHappened:
       case ErrorMessages.BadIdValue:
       case ErrorMessages.BadFormat:
