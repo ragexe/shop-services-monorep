@@ -1,4 +1,36 @@
-const PRODUCT_MODELS = [
+type TModel = {
+  name: string;
+  description?: string;
+  contentType: string;
+  schema: TSchema;
+};
+
+type TSchema =
+  | {
+      type: 'object';
+      properties: {
+        [key: string]: TSchema;
+      };
+      required?: string[];
+      additionalProperties?: boolean;
+    }
+  | {
+      type: 'array';
+      items: TSchema;
+    }
+  | {
+      type: 'string';
+      enum?: string[];
+    }
+  | {
+      type: 'null' | 'number' | 'boolean';
+    }
+  | {
+      type: string[];
+    }
+  | { $ref: string };
+
+const PRODUCT_MODELS: TModel[] = [
   {
     name: 'ProductsWrapper',
     description: '',
@@ -365,9 +397,9 @@ const PRODUCT_MODELS = [
   },
 ];
 
-const REQUEST_MODELS = [];
+const REQUEST_MODELS: TModel[] = [];
 
-const RESPONSE_MODELS = [
+const RESPONSE_MODELS: TModel[] = [
   {
     name: 'JsonResponse400',
     contentType: 'application/json',
@@ -400,7 +432,7 @@ const RESPONSE_MODELS = [
   },
 ];
 
-export const DOCUMENTATION_MODELS = [
+export const DOCUMENTATION_MODELS: TModel[] = [
   ...PRODUCT_MODELS,
   ...REQUEST_MODELS,
   ...RESPONSE_MODELS,
