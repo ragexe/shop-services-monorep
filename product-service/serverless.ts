@@ -1,12 +1,12 @@
+import { DOCUMENTATION_MODELS } from './serverless-documentation-models';
+import { serverlessConfig } from './serverless.config';
 import getProductsById from './src/functions/get-products-by-id';
 import getProductsList from './src/functions/get-products-list';
-
-import { DOCUMENTATION_MODELS } from './serverless-documentation-models';
 
 import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
-  service: 'product-service',
+  service: serverlessConfig.serviceName,
   frameworkVersion: '2',
   custom: {
     webpack: {
@@ -31,7 +31,7 @@ const serverlessConfiguration: AWS = {
         },
         tags: [
           {
-            name: 'product-service',
+            name: serverlessConfig.serviceName,
             description: 'Everything about providing products',
             externalDocs: {
               description: 'Find out more',
@@ -47,16 +47,22 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
-    profile: 'default',
+    profile: serverlessConfig.profileName,
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
     },
     environment: {
-      AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+      AWS_NODEJS_CONNECTION_REUSE_ENABLED:
+        serverlessConfig.environment.awsNodejsConnectionReuseEnabled,
+      PG_HOST: serverlessConfig.environment.pgHost,
+      PG_PORT: serverlessConfig.environment.pgPort,
+      PG_DATABASE: serverlessConfig.environment.pgDatabase,
+      PG_USERNAME: serverlessConfig.environment.pgUsername,
+      PG_PASSWORD: serverlessConfig.environment.pgPassword,
     },
-    lambdaHashingVersion: '20201221',
-    region: 'eu-west-1',
+    lambdaHashingVersion: serverlessConfig.lambdaHashingVersion,
+    region: serverlessConfig.region,
   },
   functions: { getProductsList, getProductsById },
 };
