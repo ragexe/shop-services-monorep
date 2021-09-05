@@ -1,0 +1,475 @@
+[
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "5348f50c-a80d-4361-846d-9b5cc35c9dcf",
+        "productCode": "60242",
+        "name": "Police Highway Arrest",
+        "slug": "police-highway-arrest-60242",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt64c9e185015e4acd/60242.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt64c9e185015e4acd/60242.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6288816",
+            "sku": "6288816",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 4.3333,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$29.99",
+                "centAmount": 2999,
+                "currencyCode": "USD",
+                "formattedValue": 29.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$29.99",
+                "centAmount": 2999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "f006e147-ce2a-4d07-ae48-281bfeed9469",
+        "productCode": "60276",
+        "name": "Police Prisoner Transport",
+        "slug": "police-prisoner-transport-60276",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltc2cfeb843ff9d71a/60276.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltc2cfeb843ff9d71a/60276.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6332432",
+            "sku": "6332432",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 4.7857,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$29.99",
+                "centAmount": 2999,
+                "currencyCode": "USD",
+                "formattedValue": 29.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$29.99",
+                "centAmount": 2999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "9a729126-6668-46a1-b28f-766a5f60bdf2",
+        "productCode": "60254",
+        "name": "Race Boat Transporter",
+        "slug": "race-boat-transporter-60254",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt285ddcfce73f8442/60254.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt285ddcfce73f8442/60254.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6288841",
+            "sku": "6288841",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 5,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$29.99",
+                "centAmount": 2999,
+                "currencyCode": "USD",
+                "formattedValue": 29.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$29.99",
+                "centAmount": 2999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "a6a80317-c51b-4786-afa2-7421f5975a9b",
+        "productCode": "60256",
+        "name": "Racing Cars",
+        "slug": "racing-cars-60256",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf9b362843da0fabe/60256.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf9b362843da0fabe/60256.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6288845",
+            "sku": "6288845",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 3.6667,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$29.99",
+                "centAmount": 2999,
+                "currencyCode": "USD",
+                "formattedValue": 29.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$29.99",
+                "centAmount": 2999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "a26fe798-c31b-430f-8761-cf0710c67635",
+        "productCode": "60221",
+        "name": "Diving Yacht",
+        "slug": "diving-yacht-60221",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3f88297de4335012/60221.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3f88297de4335012/60221.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6251500",
+            "sku": "6251500",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 4.5882,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": false,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$19.99",
+                "centAmount": 1999,
+                "currencyCode": "USD",
+                "formattedValue": 19.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$19.99",
+                "centAmount": 1999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "38ef8fae-626f-476f-af03-4679e2e6590e",
+        "productCode": "60287",
+        "name": "Tractor",
+        "slug": "tractor-60287",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8869ab93cdddba2a/60287.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8869ab93cdddba2a/60287.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6327971",
+            "sku": "6327971",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 4.9,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$19.99",
+                "centAmount": 1999,
+                "currencyCode": "USD",
+                "formattedValue": 19.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$19.99",
+                "centAmount": 1999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "6ebd1d1f-583f-4ecb-9abb-2e565282b401",
+        "productCode": "60279",
+        "name": "Fire Hazard Truck",
+        "slug": "fire-hazard-truck-60279",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt8db23c92f19efc81/60279.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt8db23c92f19efc81/60279.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6332411",
+            "sku": "6332411",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": null,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "currencyCode": "USD",
+                "formattedValue": 9.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "0be0453e-5613-4a3d-8239-dae11d50326d",
+        "productCode": "60251",
+        "name": "Monster Truck",
+        "slug": "monster-truck-60251",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltb0c66b3ee98d7192/60251.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltb0c66b3ee98d7192/60251.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6288835",
+            "sku": "6288835",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 4.5714,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "currencyCode": "USD",
+                "formattedValue": 9.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "962e14cf-18ca-44f4-a292-1aa7222882a5",
+        "productCode": "60241",
+        "name": "Police Dog Unit",
+        "slug": "police-dog-unit-60241",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt3dc3da9ef79f63cd/60241.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt3dc3da9ef79f63cd/60241.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6288814",
+            "sku": "6288814",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 5,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "currencyCode": "USD",
+                "formattedValue": 9.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "c7e85f80-ca96-44d9-bdc0-ecd0b34d7e20",
+        "productCode": "60275",
+        "name": "Police Helicopter",
+        "slug": "police-helicopter-60275",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/bltf3a8249e73d05b01/60275.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/bltf3a8249e73d05b01/60275.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6332429",
+            "sku": "6332429",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 4,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "E_AVAILABLE",
+                "availabilityText": "Available now",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": null,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "currencyCode": "USD",
+                "formattedValue": 9.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    },
+    {
+        "__typename": "SingleVariantProduct",
+        "id": "2e99813d-6e14-4d6c-a731-827e22687c48",
+        "productCode": "60239",
+        "name": "Police Patrol Car",
+        "slug": "police-patrol-car-60239",
+        "primaryImage": "https://www.lego.com/cdn/cs/set/assets/blt4bef815818c0842b/60239.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1",
+        "baseImgUrl": "https://www.lego.com/cdn/cs/set/assets/blt4bef815818c0842b/60239.jpg",
+        "overrideUrl": null,
+        "variant": {
+            "id": "6259422",
+            "sku": "6259422",
+            "salePercentage": 0,
+            "attributes": {
+                "rating": 4.5,
+                "maxOrderQuantity": 3,
+                "availabilityStatus": "F_BACKORDER_FOR_DATE",
+                "availabilityText": "Backorders accepted, will ship by September 2, 2021",
+                "vipAvailabilityStatus": null,
+                "vipAvailabilityText": null,
+                "canAddToBag": true,
+                "canAddToWishlist": true,
+                "vipCanAddToBag": null,
+                "onSale": false,
+                "isNew": false,
+                "featuredFlags": [],
+                "__typename": "ProductAttributes"
+            },
+            "price": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "currencyCode": "USD",
+                "formattedValue": 9.99,
+                "__typename": "Price"
+            },
+            "listPrice": {
+                "formattedAmount": "$9.99",
+                "centAmount": 999,
+                "__typename": "Price"
+            },
+            "__typename": "ProductVariant"
+        }
+    }
+]

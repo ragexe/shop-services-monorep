@@ -93,3 +93,13 @@ The project code base is mainly located within the `src` folder. This folder is 
 ### Advanced usage
 
 Any tsconfig.json can be used, but if you do, set the environment variable `TS_NODE_CONFIG` for building the application, eg `TS_NODE_CONFIG=./tsconfig.app.json npx serverless webpack`
+
+
+# How to
+
+## Deploy
+- Use `npm run-script deploy` to deploy micro service
+
+## Get swagger config
+- After deployment use `npm run-script swagger` to download swagger config JSON-file
+- Put `swagger-api.json` file content to https://editor.swagger.io/
