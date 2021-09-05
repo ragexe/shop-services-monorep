@@ -13,3 +13,9 @@ swagger-api.json
 
 # Environment
 .env
+
+# Log-files
+*.log
+
+# SQL
+insert.sql

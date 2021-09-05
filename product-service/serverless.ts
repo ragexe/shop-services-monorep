@@ -2,12 +2,14 @@ import { DOCUMENTATION_MODELS } from './serverless-documentation-models';
 import { serverlessConfig } from './serverless.config';
 import getProductsById from './src/functions/get-products-by-id';
 import getProductsList from './src/functions/get-products-list';
+import postProducts from './src/functions/post-products';
 
 import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
   service: serverlessConfig.serviceName,
   frameworkVersion: '2',
+  useDotenv: true,
   custom: {
     webpack: {
       webpackConfig: './webpack.config.js',
@@ -16,7 +18,7 @@ const serverlessConfiguration: AWS = {
     documentation: {
       api: {
         info: {
-          version: '4',
+          version: '9',
           title: 'Product Service API',
           description: 'This is API based microservice to get mocked products',
           contact: {
@@ -64,7 +66,7 @@ const serverlessConfiguration: AWS = {
     lambdaHashingVersion: serverlessConfig.lambdaHashingVersion,
     region: serverlessConfig.region,
   },
-  functions: { getProductsList, getProductsById },
+  functions: { getProductsList, getProductsById, postProducts },
 };
 
 module.exports = serverlessConfiguration;

@@ -397,35 +397,69 @@ const PRODUCT_MODELS: TModel[] = [
   },
 ];
 
-const REQUEST_MODELS: TModel[] = [];
+const REQUEST_MODELS: TModel[] = [
+  {
+    name: 'StoreProduct',
+    contentType: 'application/json',
+    schema: {
+      type: 'object',
+      properties: {
+        product: {
+          type: 'object',
+          properties: {
+            __typename: {
+              $ref: '{{model: ProductTypename}}',
+            },
+            productCode: {
+              type: 'string',
+            },
+            name: {
+              type: 'string',
+            },
+            slug: {
+              type: 'string',
+            },
+            primaryImage: {
+              type: 'string',
+            },
+            baseImgUrl: {
+              type: 'string',
+            },
+            overrideUrl: {
+              type: 'null',
+            },
+            variant: {
+              $ref: '{{model: Variant}}',
+            },
+          },
+          required: [
+            '__typename',
+            'productCode',
+            'name',
+            'slug',
+            'primaryImage',
+            'baseImgUrl',
+            'overrideUrl',
+            'variant',
+          ],
+          additionalProperties: false,
+        },
+      },
+      required: ['product'],
+      additionalProperties: false,
+    },
+  },
+];
 
 const RESPONSE_MODELS: TModel[] = [
   {
-    name: 'JsonResponse400',
+    name: 'ResponseWithMessage',
     contentType: 'application/json',
     schema: {
       type: 'object',
       properties: {
         message: {
           type: 'string',
-        },
-        statusCode: {
-          type: 'number',
-        },
-      },
-    },
-  },
-  {
-    name: 'JsonResponse404',
-    contentType: 'application/json',
-    schema: {
-      type: 'object',
-      properties: {
-        message: {
-          type: 'string',
-        },
-        statusCode: {
-          type: 'number',
         },
       },
     },

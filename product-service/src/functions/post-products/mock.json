@@ -1,0 +1,6 @@
+{
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"product\": {\"__typename\":\"SingleVariantProduct\",\"productCode\":\"60274\",\"name\":\"Police Lighthouse Capture\",\"slug\":\"elite-police-lighthouse-capture-60274\",\"primaryImage\":\"https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1\",\"baseImgUrl\":\"https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg\",\"overrideUrl\":null,\"variant\":{\"id\":\"6297093\",\"sku\":\"6297093\",\"salePercentage\":0,\"attributes\":{\"rating\":5,\"maxOrderQuantity\":3,\"availabilityStatus\":\"E_AVAILABLE\",\"availabilityText\":\"Available now\",\"vipAvailabilityStatus\":null,\"vipAvailabilityText\":null,\"canAddToBag\":true,\"canAddToWishlist\":true,\"vipCanAddToBag\":null,\"onSale\":false,\"isNew\":null,\"featuredFlags\":[],\"__typename\":\"ProductAttributes\"},\"price\":{\"formattedAmount\":\"$29.99\",\"centAmount\":2999,\"currencyCode\":\"USD\",\"formattedValue\":29.99,\"__typename\":\"Price\"},\"listPrice\":{\"formattedAmount\":\"$29.99\",\"centAmount\":2999,\"__typename\":\"Price\"},\"__typename\":\"ProductVariant\"}}}"
+}

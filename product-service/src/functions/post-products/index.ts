@@ -5,30 +5,29 @@ import { TAWSFunctionCustomEvent } from '../functions-helper';
 const events: TAWSFunctionCustomEvent = [
   {
     http: {
-      method: 'get',
-      path: 'getProductsById',
+      method: 'post',
+      path: 'postProduct',
       request: {
         parameters: {
           querystrings: {
-            id: true,
             debug: false,
           },
         },
       },
       cors: true,
       documentation: {
-        summary: 'Finds products with provided {id} and returns list of them',
+        summary: 'Store provided product to database',
+        description: 'Saves the object to the database on the server',
         tags: ['product-service'],
         queryParams: [
           {
             name: 'debug',
             description: 'If true the API response contains event object',
           },
-          {
-            name: 'id',
-            description: 'The value of the identifier for the search',
-          },
         ],
+        requestModels: {
+          'application/json': 'StoreProduct',
+        },
         methodResponses: [
           {
             statusCode: '200',
@@ -41,12 +40,6 @@ const events: TAWSFunctionCustomEvent = [
           },
           {
             statusCode: '400',
-            responseModels: {
-              'application/json': 'ResponseWithMessage',
-            },
-          },
-          {
-            statusCode: '404',
             responseModels: {
               'application/json': 'ResponseWithMessage',
             },

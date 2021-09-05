@@ -1,19 +1,25 @@
-import { ErrorMessages, Product, SourceProvider } from '../../model';
-import jsonProducts from '../../model/products.json';
-
-const defaultProvider: SourceProvider<Product[]> = {
-  provide: () => Promise.resolve(jsonProducts as Product[]),
-};
+import { ErrorMessages, Product, DataProvider } from '../../model';
+import { DEFAULT_PRODUCT_PROVIDER } from './../functions-helper';
 
 export const getProductsById: (
   id: string | null | undefined,
-  sourceProvider?: SourceProvider<Product[]>,
-) => Promise<Product[]> = async (id, sourceProvider = defaultProvider) => {
+  dataProvider?: DataProvider<Product[]>,
+) => Promise<Product[]> = async (
+  id,
+  dataProvider = DEFAULT_PRODUCT_PROVIDER,
+) => {
   if (id === null || id === undefined || typeof id !== 'string' || id === '') {
     throw new Error(ErrorMessages.BadIdValue);
   }
 
-  const productList = await sourceProvider.provide();
+  let productList;
+  try {
+    productList = await dataProvider.retrieve(
+      `select * from products inner join stocks on stocks.product_id = products.id where products.id = '${id}';`,
+    );
+  } catch (error) {
+    throw new Error(ErrorMessages.InternalDBError);
+  }
 
   if (productList === null || productList === undefined) {
     throw new Error(ErrorMessages.SomethingBadHappened);

@@ -38,7 +38,13 @@ const events: TAWSFunctionCustomEvent = [
           {
             statusCode: '400',
             responseModels: {
-              'application/json': 'JsonResponse400',
+              'application/json': 'ResponseWithMessage',
+            },
+          },
+          {
+            statusCode: '500',
+            responseModels: {
+              'application/json': 'ResponseWithMessage',
             },
           },
         ],

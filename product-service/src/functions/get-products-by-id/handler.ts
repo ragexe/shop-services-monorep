@@ -1,9 +1,11 @@
+import { Logger } from './../../libs/logger';
 import 'source-map-support/register';
 
 import {
   formResponse200,
   formResponse400,
   formResponse404,
+  formResponse500,
 } from '@libs/apiGateway';
 import { middyfy } from '@libs/lambda';
 import {
@@ -20,6 +22,8 @@ import { getProductsById } from './get-products-by-id';
 const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   event,
 ) => {
+  Logger.trace(event, 'get-products-by-id');
+
   let products: Product[];
 
   try {
@@ -28,6 +32,15 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
     switch (error.message) {
       case ErrorMessages.NotFound:
         return formResponse404(
+          { error: error, message: error.message },
+          event,
+          {
+            debug: isDebug(event),
+          },
+        );
+
+      case ErrorMessages.InternalDBError:
+        return formResponse500(
           { error: error, message: error.message },
           event,
           {

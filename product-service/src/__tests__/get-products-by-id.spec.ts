@@ -1,11 +1,11 @@
 import { getProductsById } from '../functions/get-products-by-id/get-products-by-id';
-import { ErrorMessages, Product, SourceProvider } from './../model';
+import { ErrorMessages, Product, DataProvider } from './../model';
 import productsMocks from './mock-products.json';
 
 describe('Lambda core getProductsById function', () => {
   test('it should return all products with requested {id}', async () => {
-    const sourceProvider: SourceProvider<Product[]> = {
-      provide: () => {
+    const sourceProvider: DataProvider<Product[]> = {
+      retrieve: () => {
         return Promise.resolve(productsMocks as Product[]);
       },
     };
@@ -21,8 +21,8 @@ describe('Lambda core getProductsById function', () => {
   });
 
   test('it should throw error inb case of empty data', async () => {
-    const sourceProvider: SourceProvider<Product[]> = {
-      provide: () => {
+    const sourceProvider: DataProvider<Product[]> = {
+      retrieve: () => {
         return Promise.resolve(null);
       },
     };
@@ -38,8 +38,8 @@ describe('Lambda core getProductsById function', () => {
   });
 
   test('it should throw error in case of wrong data format', async () => {
-    const sourceProvider: SourceProvider<Product[]> = {
-      provide: () => {
+    const sourceProvider: DataProvider<Product[]> = {
+      retrieve: () => {
         return JSON.parse(`{}`);
       },
     };
@@ -55,8 +55,8 @@ describe('Lambda core getProductsById function', () => {
   });
 
   test('it should throw a not-found-error if the specified object does not exist', async () => {
-    const sourceProvider: SourceProvider<Product[]> = {
-      provide: () => {
+    const sourceProvider: DataProvider<Product[]> = {
+      retrieve: () => {
         return Promise.resolve(productsMocks as Product[]);
       },
     };
@@ -72,8 +72,8 @@ describe('Lambda core getProductsById function', () => {
   });
 
   test('it should throw an error in case of invalid {id} param', async () => {
-    const sourceProvider: SourceProvider<Product[]> = {
-      provide: () => {
+    const sourceProvider: DataProvider<Product[]> = {
+      retrieve: () => {
         return Promise.resolve(productsMocks as Product[]);
       },
     };
