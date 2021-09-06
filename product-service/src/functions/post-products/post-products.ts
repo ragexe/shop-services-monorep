@@ -5,7 +5,7 @@ import { Validator } from 'jsonschema';
 
 import { DataConsumer, ErrorMessages, Product } from '../../model';
 import { getDataBaseClient } from '../functions-helper';
-import { Logger } from './../../libs/logger';
+import { DefaultLogger, ILogger } from './../../libs/logger';
 import { getProductDTO } from './../../model';
 import validationSchema from './product-schema';
 import { postRequestProductSchema } from './schema';
@@ -68,7 +68,7 @@ const postProductsConsumer: DataConsumer<Product> = {
       await databaseClient.query('COMMIT');
     } catch (error) {
       await databaseClient.query('ROLLBACK');
-      Logger.error(error);
+      DefaultLogger.error(error);
       throw error;
     } finally {
       databaseClient.end();
@@ -82,9 +82,11 @@ export const postProducts: (
     | null
     | undefined,
   dataProvider?: DataConsumer<Product>,
+  logger?: ILogger,
 ) => Promise<void> = async (
   productToStore,
   dataConsumer = postProductsConsumer,
+  logger = DefaultLogger,
 ) => {
   if (!productToStore) {
     throw new Error(ErrorMessages.ProductDataIsInvalid);
@@ -97,14 +99,15 @@ export const postProducts: (
   );
 
   if (!validatorResult.valid) {
-    Logger.error(`Product data is invalid! ${validatorResult.toString()}`);
+    logger.error(`Product data is invalid! ${validatorResult.toString()}`);
+    // TODO: Smooth error handling; Custom Errors
     throw new Error(ErrorMessages.ProductDataIsInvalid);
   }
 
   try {
-    dataConsumer.store(productToStore.product as Product);
+    return await dataConsumer.store(productToStore.product as Product);
   } catch (error) {
-    Logger.error(`Failed to store data!`);
+    logger.error(`Failed to store data!`);
     throw new Error(ErrorMessages.InternalDBError);
   }
 };

@@ -10,14 +10,14 @@ import { middyfy } from '@libs/lambda';
 
 import { ErrorMessages } from '../../model';
 import { isDebug } from '../functions-helper';
-import { Logger } from './../../libs/logger';
+import { DefaultLogger } from './../../libs/logger';
 import { postProducts } from './post-products';
 import { postRequestProductSchema } from './schema';
 
 const handler: ValidatedEventAPIGatewayProxyEvent<
   typeof postRequestProductSchema
 > = async (event) => {
-  Logger.trace(event, 'post-products');
+  DefaultLogger.trace(event, 'post-products');
 
   try {
     await postProducts(event?.body);

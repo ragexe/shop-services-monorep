@@ -1,3 +1,4 @@
+import { DefaultLogger } from './../libs/logger';
 import { AWS } from '@serverless/typescript';
 import { Client } from 'pg';
 
@@ -8,7 +9,6 @@ import {
   Product,
   TProductDTO,
 } from '../model';
-import { Logger } from './../libs/logger';
 
 export const DEFAULT_PRODUCT_PROVIDER: DataProvider<Product[]> = {
   retrieve: async (
@@ -28,7 +28,7 @@ export const DEFAULT_PRODUCT_PROVIDER: DataProvider<Product[]> = {
 
       return products;
     } catch (error) {
-      Logger.error(error);
+      DefaultLogger.error(error);
       throw error;
     } finally {
       databaseClient.end();

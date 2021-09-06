@@ -1,4 +1,4 @@
-import { Logger } from './../../libs/logger';
+import { DefaultLogger } from '../../libs/logger';
 import 'source-map-support/register';
 
 import {
@@ -22,7 +22,7 @@ import { getProductsById } from './get-products-by-id';
 const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   event,
 ) => {
-  Logger.trace(event, 'get-products-by-id');
+  DefaultLogger.trace(event, 'get-products-by-id');
 
   let products: Product[];
 

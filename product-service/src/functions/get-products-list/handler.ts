@@ -13,15 +13,15 @@ import {
   Handler,
 } from 'aws-lambda';
 
+import { DefaultLogger } from '../../libs/logger';
 import { isDebug } from '../functions-helper';
-import { Logger } from './../../libs/logger';
 import { ErrorMessages, Product } from './../../model';
 import { getProductsList } from './get-products-list';
 
 const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   event,
 ) => {
-  Logger.trace(event, 'get-products-list');
+  DefaultLogger.trace(event, 'get-products-list');
 
   let products: Product[];
 
