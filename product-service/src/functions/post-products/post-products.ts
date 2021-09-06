@@ -62,9 +62,10 @@ const postProductsConsumer: DataConsumer<Product> = {
 
       const insertStocksQueryPattern =
         'INSERT INTO stocks (product_id, count) VALUES ($1, $2)';
-      const insertPhotoValues = [id, productDTO.count];
-      await databaseClient.query(insertStocksQueryPattern, insertPhotoValues);
-
+      await databaseClient.query(insertStocksQueryPattern, [
+        id,
+        productDTO.count,
+      ]);
       await databaseClient.query('COMMIT');
     } catch (error) {
       await databaseClient.query('ROLLBACK');
