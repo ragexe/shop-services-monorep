@@ -4,6 +4,7 @@ import {
   formResponse200,
   formResponse400,
   formResponse500,
+  ProxyEvent,
   ValidatedEventAPIGatewayProxyEvent,
 } from '@libs/apiGateway';
 import { middyfy } from '@libs/lambda';
@@ -13,6 +14,7 @@ import { isDebug } from '../functions-helper';
 import { DefaultLogger } from './../../libs/logger';
 import { postProducts } from './post-products';
 import { postRequestProductSchema } from './schema';
+import { Handler, APIGatewayProxyResult } from 'aws-lambda';
 
 const handler: ValidatedEventAPIGatewayProxyEvent<
   typeof postRequestProductSchema
@@ -52,4 +54,6 @@ const handler: ValidatedEventAPIGatewayProxyEvent<
   });
 };
 
-export const main = middyfy(handler);
+export const main = middyfy(
+  handler as Handler<ProxyEvent, APIGatewayProxyResult>,
+);

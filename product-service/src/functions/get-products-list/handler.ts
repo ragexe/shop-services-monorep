@@ -1,3 +1,4 @@
+import { ProxyEvent } from './../../libs/apiGateway';
 import 'source-map-support/register';
 
 import {
@@ -64,4 +65,6 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   return formResponse200({ products }, event, { debug: isDebug(event) });
 };
 
-export const main = middyfy(handler);
+export const main = middyfy(
+  handler as Handler<ProxyEvent, APIGatewayProxyResult>,
+);

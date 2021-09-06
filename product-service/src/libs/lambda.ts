@@ -5,7 +5,7 @@ import { APIGatewayProxyResult, Handler } from 'aws-lambda';
 import { ProxyEvent } from './apiGateway';
 
 export const middyfy = (
-  handler: Handler<ProxyEvent, APIGatewayProxyResult> | any,
+  handler: Handler<ProxyEvent, APIGatewayProxyResult>,
 ) => {
   return middy(handler).use(middyJsonBodyParser());
 };
