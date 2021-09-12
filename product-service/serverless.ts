@@ -10,6 +10,7 @@ const serverlessConfiguration: AWS = {
   service: serverlessConfig.serviceName,
   frameworkVersion: '2',
   useDotenv: true,
+  disabledDeprecations: '*',
   custom: {
     webpack: {
       webpackConfig: './webpack.config.js',
@@ -18,7 +19,7 @@ const serverlessConfiguration: AWS = {
     documentation: {
       api: {
         info: {
-          version: '10',
+          version: '11',
           title: 'Product Service API',
           description: 'This is API based microservice to get mocked products',
           contact: {
@@ -34,10 +35,10 @@ const serverlessConfiguration: AWS = {
         tags: [
           {
             name: serverlessConfig.serviceName,
-            description: 'Everything about providing products',
+            description: 'Made for Node in AWS course',
             externalDocs: {
               description: 'Find out more',
-              url: 'https://cutt.ly/VWq0pGZ',
+              url: 'https://cutt.ly/aWMxksK',
             },
           },
         ],
@@ -62,6 +63,7 @@ const serverlessConfiguration: AWS = {
       PG_DATABASE: serverlessConfig.environment.pgDatabase,
       PG_USERNAME: serverlessConfig.environment.pgUsername,
       PG_PASSWORD: serverlessConfig.environment.pgPassword,
+      IS_ACTIVE_LOGGER: serverlessConfig.environment.isLoggerActive,
     },
     lambdaHashingVersion: serverlessConfig.lambdaHashingVersion,
     region: serverlessConfig.region,

@@ -17,6 +17,7 @@ export const serverlessConfig: {
     pgDatabase: string;
     pgUsername: string;
     pgPassword: string;
+    isLoggerActive: string;
   };
 } = {
   serviceName: 'product-service',
@@ -33,5 +34,6 @@ export const serverlessConfig: {
     pgDatabase: process.env.PG_DATABASE ?? '',
     pgUsername: process.env.PG_USERNAME ?? '',
     pgPassword: process.env.PG_PASSWORD ?? '',
+    isLoggerActive: process.env.IS_ACTIVE_LOGGER ?? 'false',
   },
 };

@@ -5,6 +5,7 @@
   "main": "serverless.ts",
   "scripts": {
     "invoke:local:get-products-list": "npx sls invoke local -f getProductsList",
+    "invoke:local:get-products-by-id": "npx sls invoke local -f getProductsById --path src/functions/get-products-by-id/mock.json",
     "invoke:local:post-products": "npx sls invoke local -f postProducts --path src/functions/post-products/mock.json",
     "test": "jest",
     "info": "npx serverless info --verbose",

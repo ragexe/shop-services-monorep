@@ -1,3 +1,5 @@
+import { QueryConfig } from "pg";
+
 export type TProductDTO = Pick<Product, '__typename' | 'id' | 'slug'> & {
   primary_image: Product['primaryImage'];
   base_img_url: Product['baseImgUrl'];
@@ -62,7 +64,7 @@ export const getProductFromDTO = (productDTO: TProductDTO): Product => {
 };
 
 export interface DataProvider<T> {
-  retrieve: (query?: string) => Promise<T | null | undefined>;
+  retrieve: (query?: string | QueryConfig) => Promise<T | null | undefined>;
 }
 
 export interface DataConsumer<T> {
