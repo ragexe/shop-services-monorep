@@ -8,9 +8,6 @@ jspm_packages
 # Webpack directories
 .webpack
 
-# Swagger generated/downloaded API configs
-swagger-api.json
-
 # Environment
 .env
 
