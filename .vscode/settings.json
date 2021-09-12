@@ -1,4 +1,12 @@
 {
-  "cSpell.words": ["middyfy", "Millis", "querystrings", "Tsjson"],
+  "cSpell.words": [
+    "BACKORDER",
+    "Backorders",
+    "middyfy",
+    "Millis",
+    "monorep",
+    "querystrings",
+    "Tsjson"
+  ],
   "liveServer.settings.port": 5501
 }

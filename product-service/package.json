@@ -1,7 +1,7 @@
 {
   "name": "product-service",
-  "version": "1.2.0",
-  "description": "Serverless aws-nodejs-typescript template",
+  "version": "1.4.1",
+  "description": "API-based microservices for products",
   "main": "serverless.ts",
   "scripts": {
     "invoke:local:get-products-list": "npx sls invoke local -f getProductsList",
@@ -11,7 +11,7 @@
     "info": "npx serverless info --verbose",
     "deploy": "npx serverless deploy",
     "swagger": "rm -rf swagger-api.json && npx serverless downloadDocumentation --outputFileName=swagger-api.json",
-    "release": "npm run test && npm run deploy && npm run swagger"
+    "release": "npm run test && npm version patch && npm run deploy && npm run swagger"
   },
   "engines": {
     "node": ">=14.15.0"

@@ -1,3 +1,4 @@
+import packageJSON from './package.json';
 import { DOCUMENTATION_MODELS } from './serverless-documentation-models';
 import { serverlessConfig } from './serverless.config';
 import getProductsById from './src/functions/get-products-by-id';
@@ -19,9 +20,9 @@ const serverlessConfiguration: AWS = {
     documentation: {
       api: {
         info: {
-          version: '11',
+          version: packageJSON.version,
           title: 'Product Service API',
-          description: 'This is API based microservice to get mocked products',
+          description: packageJSON.description,
           contact: {
             name: 'ragexe',
             url: 'https://discordapp.com/users/ragexe#2978',
