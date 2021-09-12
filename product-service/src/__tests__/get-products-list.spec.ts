@@ -1,11 +1,11 @@
 import { getProductsList } from '../functions/get-products-list/get-products-list';
-import { ErrorMessages, Product, SourceProvider } from './../model';
+import { ErrorMessages, Product, DataProvider } from './../model';
 import productsMocks from './mock-products.json';
 
 describe('Lambda core getProductsList function', () => {
   test('it should return all available products', async () => {
-    const sourceProvider: SourceProvider<Product[]> = {
-      provide: () => {
+    const sourceProvider: DataProvider<Product[]> = {
+      retrieve: () => {
         return Promise.resolve(productsMocks as Product[]);
       },
     };
@@ -30,8 +30,8 @@ describe('Lambda core getProductsList function', () => {
   });
 
   test('it should throw error inb case of empty data', async () => {
-    const sourceProvider: SourceProvider<Product[]> = {
-      provide: () => {
+    const sourceProvider: DataProvider<Product[]> = {
+      retrieve: () => {
         return Promise.resolve(null);
       },
     };
@@ -44,8 +44,8 @@ describe('Lambda core getProductsList function', () => {
   });
 
   test('it should throw error in case of wrong data format', async () => {
-    const sourceProvider: SourceProvider<Product[]> = {
-      provide: () => {
+    const sourceProvider: DataProvider<Product[]> = {
+      retrieve: () => {
         return Promise.resolve(JSON.parse(`{}`));
       },
     };

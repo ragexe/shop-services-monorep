@@ -10,3 +10,12 @@ jspm_packages
 
 # Swagger generated/downloaded API configs
 swagger-api.json
+
+# Environment
+.env
+
+# Log-files
+*.log
+
+# SQL
+insert.sql

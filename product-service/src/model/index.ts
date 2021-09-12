@@ -1,10 +1,79 @@
-export interface SourceProvider<T> {
-  provide: () => Promise<T | null | undefined>;
+export type TProductDTO = Pick<Product, '__typename' | 'id' | 'slug'> & {
+  primary_image: Product['primaryImage'];
+  base_img_url: Product['baseImgUrl'];
+  override_url: Product['overrideUrl'];
+  product_code: Product['productCode'];
+  title: string;
+  description: string;
+  price: number;
+  count: number;
+  variant: Variant | string;
+};
+
+export const getProductDTO = (product: Product): TProductDTO => {
+  const { __typename, slug } = product;
+  
+  return {
+    __typename,
+    slug,
+    primary_image: product.primaryImage,
+    base_img_url: product.baseImgUrl,
+    override_url: product.overrideUrl,
+    product_code: product.productCode,
+    title: product.name,
+    description: product.name,
+    price: product.variant.price.formattedValue,
+    count: product.variant.attributes.maxOrderQuantity,
+    variant: JSON.stringify(product.variant),
+  };
+};
+
+export const getProductFromDTO = (productDTO: TProductDTO): Product => {
+  const {
+    __typename,
+    id,
+    product_code: productCode,
+    title,
+    slug,
+    primary_image: primaryImage,
+    base_img_url: baseImgUrl,
+    override_url: overrideUrl,
+    price,
+    count,
+    variant,
+  } = productDTO;
+
+  const decoratedVariant: Variant =
+    typeof variant == 'string' ? JSON.parse(variant) : variant;
+  decoratedVariant.price.formattedValue = price;
+  decoratedVariant.attributes.maxOrderQuantity = count;
+
+  return {
+    __typename,
+    id,
+    productCode,
+    name: title,
+    slug,
+    primaryImage,
+    baseImgUrl,
+    overrideUrl,
+    variant: decoratedVariant,
+  };
+};
+
+export interface DataProvider<T> {
+  retrieve: (query?: string) => Promise<T | null | undefined>;
+}
+
+export interface DataConsumer<T> {
+  store: (data: T) => Promise<void>;
 }
 
 export enum ErrorMessages {
+  ProductDataIsInvalid = 'Product data is invalid',
   SomethingBadHappened = 'Something bad happened!',
-  BadIdValue = 'Bad id value!',
+  InternalDBError = 'Internal database error!',
+  BadIdValue = 'Empty {id} value!',
   BadFormat = 'Bad format!',
   NotFound = 'Not found!',
 }
@@ -14,7 +83,7 @@ export enum ErrorMessages {
 
 export interface Product {
   __typename: ProductTypename;
-  id: string;
+  id?: string;
   productCode: string;
   name: string;
   slug: string;

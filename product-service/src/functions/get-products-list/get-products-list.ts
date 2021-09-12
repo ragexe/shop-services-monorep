@@ -1,14 +1,17 @@
-import { ErrorMessages, Product, SourceProvider } from '../../model';
-import jsonProducts from '../../model/products.json';
+import { ErrorMessages, Product, DataProvider } from './../../model';
+import { DEFAULT_PRODUCT_PROVIDER } from './../functions-helper';
 
-const defaultProvider: SourceProvider<Product[]> = {
-  provide: () => Promise.resolve(jsonProducts as Product[]),
-};
 
 export const getProductsList: (
-  provider?: SourceProvider<Product[]>,
-) => Promise<Product[]> = async (provider = defaultProvider) => {
-  const resultProducts = await provider.provide();
+  dataProvider?: DataProvider<Product[]>,
+) => Promise<Product[]> = async (dataProvider = DEFAULT_PRODUCT_PROVIDER) => {
+  let resultProducts: Product[] | null | undefined;
+
+  try {
+    resultProducts = await dataProvider.retrieve();
+  } catch (error) {
+    throw new Error(ErrorMessages.InternalDBError);
+  }
 
   if (resultProducts === null || resultProducts === undefined) {
     throw new Error(ErrorMessages.SomethingBadHappened);

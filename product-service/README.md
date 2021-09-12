@@ -103,3 +103,7 @@ Any tsconfig.json can be used, but if you do, set the environment variable `TS_N
 ## Get swagger config
 - After deployment use `npm run-script swagger` to download swagger config JSON-file
 - Put `swagger-api.json` file content to https://editor.swagger.io/
+
+## Use database
+- Copy and rename `sample.env` to `.env`.
+- Provide credential values to `.env` variable

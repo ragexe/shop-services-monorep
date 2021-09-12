@@ -5,6 +5,8 @@ import type {
 } from 'aws-lambda';
 import type { FromSchema } from 'json-schema-to-ts';
 
+export type ProxyEvent = Omit<APIGatewayProxyEvent, 'body'> & { body: string | null | object };
+
 type ValidatedAPIGatewayProxyEvent<S> = Omit<APIGatewayProxyEvent, 'body'> & {
   body: FromSchema<S>;
 };
@@ -14,7 +16,7 @@ export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<
   APIGatewayProxyResult
 >;
 
-type TSupportedStatusCodes = 200 | 400 | 404;
+type TSupportedStatusCodes = 200 | 400 | 500 | 404;
 type TOptions = {
   debug: boolean;
 };
@@ -29,21 +31,29 @@ type TResponse = {
 
 export const formResponse200 = (
   payload: Record<string, unknown>,
-  event: APIGatewayProxyEvent,
+  event: ProxyEvent,
   { debug = false }: Partial<TOptions>,
 ) => formResponse(200, payload, event, { debug });
 
 export const formResponse400 = (
   payload: Record<string, unknown>,
-  event: APIGatewayProxyEvent,
+  event: ProxyEvent,
   { debug = false }: Partial<TOptions>,
 ) => {
   return formResponse(400, payload, event, { debug });
 };
 
+export const formResponse500 = (
+  payload: Record<string, unknown>,
+  event: ProxyEvent,
+  { debug = false }: Partial<TOptions>,
+) => {
+  return formResponse(500, payload, event, { debug });
+};
+
 export const formResponse404 = (
   payload: Record<string, unknown>,
-  event: APIGatewayProxyEvent,
+  event: ProxyEvent,
   { debug = false }: Partial<TOptions>,
 ) => {
   return formResponse(404, payload, event, { debug });
@@ -52,7 +62,7 @@ export const formResponse404 = (
 const formResponse = (
   statusCode: TSupportedStatusCodes,
   payload: Record<string, unknown>,
-  event: APIGatewayProxyEvent,
+  event: ProxyEvent,
   { debug }: TOptions,
 ) => {
   const resultResponseBody = {

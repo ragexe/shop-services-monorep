@@ -1,44 +1,30 @@
-import { ProxyEvent } from './../../libs/apiGateway';
 import 'source-map-support/register';
 
 import {
   formResponse200,
   formResponse400,
-  formResponse404,
   formResponse500,
+  ProxyEvent,
+  ValidatedEventAPIGatewayProxyEvent,
 } from '@libs/apiGateway';
 import { middyfy } from '@libs/lambda';
-import {
-  APIGatewayProxyEvent,
-  APIGatewayProxyResult,
-  Handler,
-} from 'aws-lambda';
 
-import { DefaultLogger } from '../../libs/logger';
+import { ErrorMessages } from '../../model';
 import { isDebug } from '../functions-helper';
-import { ErrorMessages, Product } from './../../model';
-import { getProductsList } from './get-products-list';
+import { DefaultLogger } from './../../libs/logger';
+import { postProducts } from './post-products';
+import { postRequestProductSchema } from './schema';
+import { Handler, APIGatewayProxyResult } from 'aws-lambda';
 
-const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
-  event,
-) => {
-  DefaultLogger.trace(event, 'get-products-list');
-
-  let products: Product[];
+const handler: ValidatedEventAPIGatewayProxyEvent<
+  typeof postRequestProductSchema
+> = async (event) => {
+  DefaultLogger.trace(event, 'post-products');
 
   try {
-    products = await getProductsList();
+    await postProducts(event?.body);
   } catch (error) {
     switch (error.message) {
-      case ErrorMessages.NotFound:
-        return formResponse404(
-          { error: error, message: error.message },
-          event,
-          {
-            debug: isDebug(event),
-          },
-        );
-
       case ErrorMessages.InternalDBError:
         return formResponse500(
           { error: error, message: error.message },
@@ -51,6 +37,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
       case ErrorMessages.SomethingBadHappened:
       case ErrorMessages.BadIdValue:
       case ErrorMessages.BadFormat:
+      case ErrorMessages.ProductDataIsInvalid:
       default:
         return formResponse400(
           { error: error, message: error.message },
@@ -62,7 +49,9 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
     }
   }
 
-  return formResponse200({ products }, event, { debug: isDebug(event) });
+  return formResponse200({ message: 'Success!' }, event, {
+    debug: isDebug(event),
+  });
 };
 
 export const main = middyfy(

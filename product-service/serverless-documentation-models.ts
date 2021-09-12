@@ -1,4 +1,36 @@
-const PRODUCT_MODELS = [
+type TModel = {
+  name: string;
+  description?: string;
+  contentType: string;
+  schema: TSchema;
+};
+
+type TSchema =
+  | {
+      type: 'object';
+      properties: {
+        [key: string]: TSchema;
+      };
+      required?: string[];
+      additionalProperties?: boolean;
+    }
+  | {
+      type: 'array';
+      items: TSchema;
+    }
+  | {
+      type: 'string';
+      enum?: string[];
+    }
+  | {
+      type: 'null' | 'number' | 'boolean';
+    }
+  | {
+      type: string[];
+    }
+  | { $ref: string };
+
+const PRODUCT_MODELS: TModel[] = [
   {
     name: 'ProductsWrapper',
     description: '',
@@ -365,42 +397,76 @@ const PRODUCT_MODELS = [
   },
 ];
 
-const REQUEST_MODELS = [];
-
-const RESPONSE_MODELS = [
+const REQUEST_MODELS: TModel[] = [
   {
-    name: 'JsonResponse400',
+    name: 'StoreProduct',
     contentType: 'application/json',
     schema: {
       type: 'object',
       properties: {
-        message: {
-          type: 'string',
-        },
-        statusCode: {
-          type: 'number',
+        product: {
+          type: 'object',
+          properties: {
+            __typename: {
+              $ref: '{{model: ProductTypename}}',
+            },
+            productCode: {
+              type: 'string',
+            },
+            name: {
+              type: 'string',
+            },
+            slug: {
+              type: 'string',
+            },
+            primaryImage: {
+              type: 'string',
+            },
+            baseImgUrl: {
+              type: 'string',
+            },
+            overrideUrl: {
+              type: 'null',
+            },
+            variant: {
+              $ref: '{{model: Variant}}',
+            },
+          },
+          required: [
+            '__typename',
+            'productCode',
+            'name',
+            'slug',
+            'primaryImage',
+            'baseImgUrl',
+            'overrideUrl',
+            'variant',
+          ],
+          additionalProperties: false,
         },
       },
+      required: ['product'],
+      additionalProperties: false,
     },
   },
+];
+
+const RESPONSE_MODELS: TModel[] = [
   {
-    name: 'JsonResponse404',
+    name: 'ResponseWithMessage',
     contentType: 'application/json',
     schema: {
       type: 'object',
       properties: {
         message: {
           type: 'string',
-        },
-        statusCode: {
-          type: 'number',
         },
       },
     },
   },
 ];
 
-export const DOCUMENTATION_MODELS = [
+export const DOCUMENTATION_MODELS: TModel[] = [
   ...PRODUCT_MODELS,
   ...REQUEST_MODELS,
   ...RESPONSE_MODELS,
