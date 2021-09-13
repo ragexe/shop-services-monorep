@@ -4,6 +4,7 @@
   "description": "API-based microservice for importing products",
   "main": "serverless.ts",
   "scripts": {
+    "invoke:local:import-products-file": "npx sls invoke local -f importProductsFile --path src/functions/import-products-file/mock.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -12,12 +13,14 @@
   "dependencies": {
     "@middy/core": "^1.5.2",
     "@middy/http-json-body-parser": "^1.5.2",
+    "aws-sdk": "^2.987.0",
+    "dotenv": "^10.0.0",
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
-    "@serverless/typescript": "^2.23.0",
-    "@types/aws-lambda": "^8.10.71",
-    "@types/node": "^14.14.25",
+    "@serverless/typescript": "^2.55.0",
+    "@types/aws-lambda": "^8.10.83",
+    "@types/node": "^14.17.15",
     "json-schema-to-ts": "^1.5.0",
     "serverless": "^2.23.0",
     "serverless-webpack": "^5.3.5",
@@ -25,7 +28,7 @@
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
     "tsconfig-paths-webpack-plugin": "^3.3.0",
-    "typescript": "^4.1.3",
+    "typescript": "^4.4.3",
     "webpack": "^5.20.2",
     "webpack-node-externals": "^2.5.2"
   },

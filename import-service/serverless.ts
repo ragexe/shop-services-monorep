@@ -1,9 +1,10 @@
+import { serverlessConfig } from './serverless.config';
+import importProductsFile from './src/functions/import-products-file';
+
 import type { AWS } from '@serverless/typescript';
 
-import hello from '@functions/hello';
-
 const serverlessConfiguration: AWS = {
-  service: 'import-service',
+  service: serverlessConfig.serviceName,
   frameworkVersion: '2',
   custom: {
     webpack: {
@@ -15,17 +16,20 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
+    profile: serverlessConfig.profileName,
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
     },
     environment: {
-      AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+      AWS_NODEJS_CONNECTION_REUSE_ENABLED:
+        serverlessConfig.environment.awsNodejsConnectionReuseEnabled,
+      IS_ACTIVE_LOGGER: serverlessConfig.environment.isLoggerActive,
     },
-    lambdaHashingVersion: '20201221',
+    lambdaHashingVersion: serverlessConfig.lambdaHashingVersion,
+    region: serverlessConfig.region,
   },
-  // import the function via paths
-  functions: { hello },
+  functions: { importProductsFile },
 };
 
 module.exports = serverlessConfiguration;
