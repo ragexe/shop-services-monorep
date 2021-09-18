@@ -5,6 +5,11 @@ dotenv.config();
 
 export const serverlessConfig: {
   serviceName: string;
+  storage: {
+    bucketName: string;
+    uploadFolderName: string;
+    parsedFolderName: string;
+  };
   profileName: string;
   region: AWS['provider']['region'];
   lambdaHashingVersion: AWS['provider']['lambdaHashingVersion'];
@@ -14,6 +19,11 @@ export const serverlessConfig: {
   };
 } = {
   serviceName: 'import-service',
+  storage: {
+    bucketName: 'import-service-storage',
+    uploadFolderName: 'uploaded',
+    parsedFolderName: 'parsed',
+  },
   profileName: 'default',
   region: 'eu-west-1',
   lambdaHashingVersion: '20201221',

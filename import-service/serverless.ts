@@ -6,6 +6,8 @@ import type { AWS } from '@serverless/typescript';
 const serverlessConfiguration: AWS = {
   service: serverlessConfig.serviceName,
   frameworkVersion: '2',
+  useDotenv: true,
+  disabledDeprecations: '*',
   custom: {
     webpack: {
       webpackConfig: './webpack.config.js',
@@ -17,6 +19,18 @@ const serverlessConfiguration: AWS = {
     name: 'aws',
     runtime: 'nodejs14.x',
     profile: serverlessConfig.profileName,
+    iamRoleStatements: [
+      {
+        Effect: 'Allow',
+        Action: 's3:ListBucket',
+        Resource: [`arn:aws:s3:::${serverlessConfig.storage.bucketName}`],
+      },
+      {
+        Effect: 'Allow',
+        Action: 's3:*',
+        Resource: [`arn:aws:s3:::${serverlessConfig.storage.bucketName}/*`],
+      },
+    ],
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,

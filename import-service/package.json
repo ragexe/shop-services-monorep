@@ -5,7 +5,8 @@
   "main": "serverless.ts",
   "scripts": {
     "invoke:local:import-products-file": "npx sls invoke local -f importProductsFile --path src/functions/import-products-file/mock.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npx serverless deploy"
   },
   "engines": {
     "node": ">=14.15.0"
@@ -15,7 +16,8 @@
     "@middy/http-json-body-parser": "^1.5.2",
     "aws-sdk": "^2.987.0",
     "dotenv": "^10.0.0",
-    "source-map-support": "^0.5.19"
+    "source-map-support": "^0.5.19",
+    "uuidv4": "^6.2.12"
   },
   "devDependencies": {
     "@serverless/typescript": "^2.55.0",
