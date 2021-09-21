@@ -23,7 +23,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   try {
     presignedUrl = await getSignedUrl(event.queryStringParameters?.name);
   } catch (error) {
-    DefaultLogger.error(error);
+    DefaultLogger.error('Lambda handler exception');
 
     switch (error) {
       case ErrorMessages.InvalidFileName:

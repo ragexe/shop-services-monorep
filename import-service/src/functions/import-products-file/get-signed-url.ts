@@ -1,12 +1,12 @@
 import { S3 } from 'aws-sdk';
 import { serverlessConfig } from '../../../serverless.config';
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 
 import { ErrorMessages } from '../../model';
 
 export const getSignedUrl = async (
   fileName: string | null | undefined,
-  postfix: string = uuid(),
+  postfix: string = v4(),
 ) => {
   if (!fileName) {
     throw new Error(ErrorMessages.InvalidFileName);
