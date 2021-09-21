@@ -1,3 +1,4 @@
+import packageJSON from './package.json';
 import { serverlessConfig } from './serverless.config';
 import importFileParser from './src/functions/import-file-parser';
 import importProductsFile from './src/functions/import-products-file';
@@ -14,8 +15,63 @@ const serverlessConfiguration: AWS = {
       webpackConfig: './webpack.config.js',
       includeModules: true,
     },
+    documentation: {
+      api: {
+        info: {
+          version: packageJSON.version,
+          title: 'Import Service API',
+          description: packageJSON.description,
+          contact: {
+            name: 'ragexe',
+            url: 'https://discordapp.com/users/ragexe#2978',
+            email: 'ragexe@mail.ru',
+          },
+          license: {
+            name: 'The license',
+            url: 'https://www.github.com',
+          },
+        },
+        tags: [
+          {
+            name: serverlessConfig.serviceName,
+            description: 'Made for Node in AWS course',
+            externalDocs: {
+              description: 'Find out more',
+              url: 'https://cutt.ly/aWMxksK',
+            },
+          },
+        ],
+      },
+      models: [
+        {
+          name: 'ResponseWithMessage',
+          contentType: 'application/json',
+          schema: {
+            type: 'object',
+            properties: {
+              message: {
+                type: 'string',
+              },
+            },
+          },
+        },
+        {
+          name: 'PresignedURLWrapper',
+          description: '',
+          contentType: 'application/json',
+          schema: {
+            type: 'object',
+            properties: {
+              presignedUrl: {
+                type: 'string',
+              },
+            },
+          },
+        },
+      ],
+    },
   },
-  plugins: ['serverless-webpack'],
+  plugins: ['serverless-webpack', 'serverless-aws-documentation'],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
