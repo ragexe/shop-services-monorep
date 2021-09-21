@@ -1,19 +1,20 @@
 {
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "lib": ["ESNext"],
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "outDir": "lib",
     "removeComments": true,
+    "resolveJsonModule": true,
     "sourceMap": false,
     "strict": true,
+    "strictNullChecks": true,
     "target": "ES2020",
-    "outDir": "lib",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true
+    "useUnknownInCatchVariables":false
   },
   "include": ["src/**/*.ts", "serverless.ts"],
   "exclude": [

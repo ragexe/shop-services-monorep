@@ -6,6 +6,7 @@ dotenv.config();
 export const serverlessConfig: {
   serviceName: string;
   storage: {
+    fileExtension: string;
     bucketName: string;
     uploadFolderName: string;
     parsedFolderName: string;
@@ -20,6 +21,7 @@ export const serverlessConfig: {
 } = {
   serviceName: 'import-service',
   storage: {
+    fileExtension: 'csv',
     bucketName: 'import-service-storage',
     uploadFolderName: 'uploaded',
     parsedFolderName: 'parsed',
