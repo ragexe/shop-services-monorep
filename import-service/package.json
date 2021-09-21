@@ -1,6 +1,6 @@
 {
   "name": "import-service",
-  "version": "1.2.1",
+  "version": "1.3.3",
   "description": "API-based microservice for importing products",
   "main": "serverless.ts",
   "scripts": {
@@ -8,15 +8,11 @@
     "invoke:local:import-file-parser": "npx sls invoke local -f importFileParser --path src/functions/import-file-parser/mock.json",
     "test": "jest",
     "deploy": "npx serverless deploy",
-    "bump-version:patch": "npm version patch",
-    "bump-version:minor": "npm version minor",
-    "bump-version:major": "npm version major",
-    "bump-version:patch:no-tag": "npm version patch --no-git-tag-version",
-    "bump-version:minor:no-tag": "npm version minor --no-git-tag-version",
-    "bump-version:major:no-tag": "npm version major --no-git-tag-version",
-    "release:patch": "npm run test && npm run bump-version:patch && npm run deploy",
-    "release:minor": "npm run test && npm run bump-version:minor && npm run deploy",
-    "release:major": "npm run test && npm run bump-version:major && npm run deploy"
+    "bump-version:patch": "npm run test && npm version patch && git add package-lock.json package.json",
+    "bump-version:minor": "npm run test && npm version minor && git add package-lock.json package.json",
+    "bump-version:major": "npm run test && npm version major && git add package-lock.json package.json",
+    "release": "npm run test && npm run deploy",
+    "postrelease": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
   },
   "engines": {
     "node": ">=14.15.0"
@@ -36,6 +32,7 @@
     "@types/jest": "^27.0.1",
     "@types/mocha": "^9.0.0",
     "@types/node": "^14.17.15",
+    "@types/uuid": "^8.3.1",
     "aws-sdk-mock": "^5.3.0",
     "jest": "^27.2.0",
     "json-schema-to-ts": "^1.5.0",

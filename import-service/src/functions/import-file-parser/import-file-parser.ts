@@ -1,17 +1,43 @@
 import { S3Event, S3EventRecord } from 'aws-lambda';
 import * as AWS from 'aws-sdk';
-import * as csvParser from 'csvtojson';
+import helper from 'csvtojson';
+import * as internal from 'stream';
 
 import { serverlessConfig } from '../../../serverless.config';
 import { DefaultLogger } from '../../libs/logger';
 import { ErrorMessages } from '../../model';
 
 export type TImportProcessResult = {
-  success: boolean;
+  isSuccessful: boolean;
+};
+
+const DEFAULT_PARSER = {
+  fromStream: async (readable: internal.Readable) => {
+    const result: unknown[] = [];
+
+    await helper()
+      .fromStream(readable)
+      .subscribe(
+        (parsedDataRow: unknown) => {
+          // TODO: Validation in accordance with product schema
+          result.push(parsedDataRow);
+        },
+        (error: unknown) => {
+          DefaultLogger.error('Parsing csv-file error', error);
+        },
+        () => {},
+      );
+
+    return result;
+  },
 };
 
 export const importFileParser = async (
   event: S3Event,
+  parser: {
+    fromStream: (readable: internal.Readable) => Promise<unknown[]>;
+  } = DEFAULT_PARSER,
+  logger = DefaultLogger
 ): Promise<TImportProcessResult> => {
   const records: S3EventRecord[] = (event?.Records ?? []).filter(
     (record) => record.eventName === 'ObjectCreated:Put',
@@ -26,29 +52,16 @@ export const importFileParser = async (
   const allProcesses: PromiseLike<void>[] = records.map<PromiseLike<void>>(
     async (record) => {
       try {
-        await csvParser()
-          .fromStream(
-            s3
-              .getObject({
-                Bucket: `${record.s3.bucket.name}`,
-                Key: `${record.s3.object.key}`,
-              })
-              .createReadStream(),
-          )
-          .subscribe(
-            (json) => {
-              // TODO: Validation in accordance with product schema
-              DefaultLogger.log(`Parsed data: ${JSON.stringify(json)}`);
-            },
-            (error) => {
-              DefaultLogger.error('Parsing csv-file error.', error);
-            },
-            () => {
-              DefaultLogger.log(`[${record.s3.object.key}] Parsing finished`);
-            },
-          );
-
-        DefaultLogger.log('Converting finished');
+        const parsedData: unknown[] = await parser.fromStream(
+          s3
+            .getObject({
+              Bucket: `${record.s3.bucket.name}`,
+              Key: `${record.s3.object.key}`,
+            })
+            .createReadStream(),
+        );
+        logger.debug(`[${record.s3.object.key}] Parsing finished`);
+        logger.debug(`Parsed data: ${JSON.stringify(parsedData)}`);
 
         const copyObjectOutput = await s3
           .copyObject({
@@ -62,8 +75,8 @@ export const importFileParser = async (
           })
           .promise();
 
-        DefaultLogger.log(copyObjectOutput);
-        DefaultLogger.log('Copying finished');
+        logger.debug(copyObjectOutput);
+        logger.debug('Copying finished');
 
         const deleteObjectOutput = await s3
           .deleteObject({
@@ -72,10 +85,10 @@ export const importFileParser = async (
           })
           .promise();
 
-        DefaultLogger.log(deleteObjectOutput);
-        DefaultLogger.log('Deleting finished');
+        logger.debug(deleteObjectOutput);
+        logger.debug('Deleting finished');
       } catch (error) {
-        DefaultLogger.error(error);
+        logger.error(error);
         throw new Error(ErrorMessages.SomethingWentWrong);
       }
     },
@@ -84,14 +97,14 @@ export const importFileParser = async (
   try {
     return await Promise.all(allProcesses).then(
       () => ({
-        success: true,
+        isSuccessful: true,
       }),
       () => ({
-        success: false,
+        isSuccessful: false,
       }),
     );
   } catch (error) {
-    DefaultLogger.error(error);
+    logger.error(error);
     throw new Error(ErrorMessages.SomethingWentWrong);
   }
 };

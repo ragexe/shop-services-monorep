@@ -5,6 +5,7 @@ export interface ILogger {
   trace: (event: ProxyEvent | S3Event, path: string) => void;
   error: (...args: any) => void;
   log: (...args: any) => void;
+  debug: (...args: any) => void;
 }
 
 export const DefaultLogger: ILogger = {
@@ -22,6 +23,12 @@ export const DefaultLogger: ILogger = {
     console.error(args);
   },
   log: (...args: any) => {
+    const isActive = process.env.IS_ACTIVE_LOGGER === 'true';
+    if (!isActive) { return; }
+
+    console.log(args);
+  },
+  debug: (...args: any) => {
     const isActive = process.env.IS_ACTIVE_LOGGER === 'true';
     if (!isActive) { return; }
 
