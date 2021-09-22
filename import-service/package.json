@@ -1,6 +1,6 @@
 {
   "name": "import-service",
-  "version": "1.5.0",
+  "version": "1.6.3",
   "description": "API-based microservice for importing products",
   "main": "serverless.ts",
   "scripts": {
@@ -23,6 +23,7 @@
     "aws-sdk": "^2.987.0",
     "csvtojson": "^2.0.10",
     "dotenv": "^10.0.0",
+    "jsonschema": "^1.4.0",
     "source-map-support": "^0.5.19",
     "uuid": "^8.3.2"
   },
