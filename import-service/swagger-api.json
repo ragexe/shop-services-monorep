@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "API-based microservice for importing products",
-    "version" : "2021-09-21T23:26:41Z",
+    "version" : "2021-09-21T23:54:21Z",
     "title" : "import-service-dev",
     "contact" : {
       "name" : "ragexe",
@@ -80,9 +80,67 @@
           }
         }
       }
+    },
+    "/test" : {
+      "get" : {
+        "tags" : [ "import-service" ],
+        "summary" : "Returns list of uploaded/parsed files",
+        "description" : "Interacts with S3 AWS service to provide bucket content",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "debug",
+          "in" : "query",
+          "description" : "If true the API response contains event object",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/FileListWrapper"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseWithMessage"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions" : {
+    "FileListWrapper" : {
+      "type" : "object",
+      "properties" : {
+        "fileList" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      }
+    },
     "ResponseWithMessage" : {
       "type" : "object",
       "properties" : {

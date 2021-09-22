@@ -2,6 +2,7 @@ import packageJSON from './package.json';
 import { serverlessConfig } from './serverless.config';
 import importFileParser from './src/functions/import-file-parser';
 import importProductsFile from './src/functions/import-products-file';
+import temporaryFileCheck from './src/functions/tmp-get-file-list';
 
 import type { AWS } from '@serverless/typescript';
 
@@ -68,6 +69,19 @@ const serverlessConfiguration: AWS = {
             },
           },
         },
+        {
+          name: 'FileListWrapper',
+          description: '',
+          contentType: 'application/json',
+          schema: {
+            type: 'object',
+            properties: {
+              fileList: {
+                type: 'object',
+              },
+            },
+          },
+        },
       ],
     },
   },
@@ -100,7 +114,7 @@ const serverlessConfiguration: AWS = {
     lambdaHashingVersion: serverlessConfig.lambdaHashingVersion,
     region: serverlessConfig.region,
   },
-  functions: { importProductsFile, importFileParser },
+  functions: { importProductsFile, importFileParser, temporaryFileCheck },
 };
 
 module.exports = serverlessConfiguration;
