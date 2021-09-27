@@ -1,0 +1,6 @@
+{
+  "queryStringParameters": {
+    "debug": "true",
+    "name": "filename.csv"
+  }
+}

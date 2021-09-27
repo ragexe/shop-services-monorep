@@ -1,0 +1,161 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API-based microservice for importing products",
+    "version" : "2021-09-22T01:34:42Z",
+    "title" : "import-service-dev",
+    "contact" : {
+      "name" : "ragexe",
+      "url" : "https://discordapp.com/users/ragexe#2978",
+      "email" : "ragexe@mail.ru"
+    },
+    "license" : {
+      "name" : "The license",
+      "url" : "https://www.github.com"
+    }
+  },
+  "host" : "llbhmcmrja.execute-api.eu-west-1.amazonaws.com",
+  "basePath" : "/dev",
+  "tags" : [ {
+    "name" : "import-service",
+    "description" : "Made for Node in AWS course",
+    "externalDocs" : {
+      "description" : "Find out more",
+      "url" : "https://cutt.ly/aWMxksK"
+    }
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/import" : {
+      "get" : {
+        "tags" : [ "import-service" ],
+        "summary" : "Returns presigned URL to upload .csv files",
+        "description" : "Interacts with S3 AWS service to provide upload-link",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "debug",
+          "in" : "query",
+          "description" : "If true the API response contains event object",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "description" : "Name of file to upload",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/PresignedURLWrapper"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseWithMessage"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/test" : {
+      "get" : {
+        "tags" : [ "import-service" ],
+        "summary" : "Returns list of uploaded/parsed files",
+        "description" : "Interacts with S3 AWS service to provide bucket content",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "debug",
+          "in" : "query",
+          "description" : "If true the API response contains event object",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/FileListWrapper"
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseWithMessage"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "FileListWrapper" : {
+      "type" : "object",
+      "properties" : {
+        "fileList" : {
+          "type" : "object",
+          "properties" : { }
+        }
+      }
+    },
+    "ResponseWithMessage" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PresignedURLWrapper" : {
+      "type" : "object",
+      "properties" : {
+        "presignedUrl" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

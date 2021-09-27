@@ -1,0 +1,38 @@
+{
+    "Records": [
+        {
+            "eventVersion": "2.1",
+            "eventSource": "aws:s3",
+            "awsRegion": "eu-west-1",
+            "eventTime": "2021-09-22T00:40:48.214Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+                "principalId": "AWS:AROAR4Y5DPC4J2AIWPBIP:import-service-dev-importProductsFile"
+            },
+            "requestParameters": {
+                "sourceIPAddress": "178.122.229.189"
+            },
+            "responseElements": {
+                "x-amz-request-id": "WCF7TDY6WQZP6EZ5",
+                "x-amz-id-2": "YJAPJNDR88XqEjkWEtXDyXr8Qg8svEaC2U0Z/50913+1U3QSi02hHS1HLAWy69GNOkD4E2x7SC3xZCbgJXuR+bl8qb/2x4ta"
+            },
+            "s3": {
+                "s3SchemaVersion": "1.0",
+                "configurationId": "import-service-dev-importFileParser-9eceafef0fe575eb52543c9070542d86",
+                "bucket": {
+                    "name": "import-service-storage",
+                    "ownerIdentity": {
+                        "principalId": "ARZHEPPV0UXLP"
+                    },
+                    "arn": "arn:aws:s3:::import-service-storage"
+                },
+                "object": {
+                    "key": "uploaded/products0.8aa59917-222a-40ae-b0f6-8762e2c0bfe6.csv",
+                    "size": 1972,
+                    "eTag": "5be40e2be39ebfc2c2ce12d5f571026d",
+                    "sequencer": "00614A7B9509BFEF92"
+                }
+            }
+        }
+    ]
+}

@@ -33,7 +33,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
     switch (error.message) {
       case ErrorMessages.NotFound:
         return formResponse404(
-          { error: error, message: error.message },
+          { error, message: error.message },
           event,
           {
             debug: isDebug(event),
@@ -42,7 +42,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
 
       case ErrorMessages.InternalDBError:
         return formResponse500(
-          { error: error, message: error.message },
+          { error, message: error.message },
           event,
           {
             debug: isDebug(event),
