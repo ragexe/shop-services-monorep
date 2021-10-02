@@ -1,14 +1,14 @@
 import { S3Event } from 'aws-lambda';
 import { ProxyEvent } from './apiGateway';
 
-export interface ILogger {
+export interface ILoggerProvider {
   trace: (event: ProxyEvent | S3Event, path: string) => void;
   error: (...args: any) => void;
   log: (...args: any) => void;
   debug: (...args: any) => void;
 }
 
-export const DefaultLogger: ILogger = {
+export const DefaultLogger: ILoggerProvider = {
   trace: (event: ProxyEvent | S3Event, path: string) => {
     const isActive = process.env.IS_ACTIVE_LOGGER === 'true';
     if (!isActive) { return; }
