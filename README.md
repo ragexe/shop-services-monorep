@@ -63,3 +63,5 @@ Reviewers (for Rolling Scopes Application only) should verify the lambda functio
 
 *[source](https://github.com/EPAM-JS-Competency-center/cloud-development-course-initial/blob/main/task3-product-magamanent-api/task.md
 )*
+
+import s3 from 'aws-sdk'. изменил на import * as s3 from 'aws-sdk/clients/s3'
