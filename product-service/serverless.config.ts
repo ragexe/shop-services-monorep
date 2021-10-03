@@ -29,7 +29,7 @@ export const serverlessConfig: {
   region: 'eu-west-1',
   lambdaHashingVersion: '20201221',
   parserQueue: {
-    importName: 'ParsedQueueImportServiceArn',
+    importName: 'catalogItemsQueue',
     batchSize: 5,
   },
   environment: {

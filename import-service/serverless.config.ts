@@ -34,9 +34,9 @@ export const serverlessConfig: {
   },
   parserQueue: {
     ref: 'SQSQueue',
-    sqsQueueName: 'product-service-sqs-queue',
+    sqsQueueName: 'catalog-items-queue',
     waitTime: 20,
-    exportName: 'ParsedQueueImportServiceArn'
+    exportName: 'catalogItemsQueue'
   },
   profileName: 'default',
   region: 'eu-west-1',
