@@ -1,6 +1,7 @@
 import packageJSON from './package.json';
 import { DOCUMENTATION_MODELS } from './serverless-documentation-models';
 import { serverlessConfig } from './serverless.config';
+import catalogBatchProcess from './src/functions/catalog-batch-process';
 import getProductsById from './src/functions/get-products-by-id';
 import getProductsList from './src/functions/get-products-list';
 import postProducts from './src/functions/post-products';
@@ -69,7 +70,12 @@ const serverlessConfiguration: AWS = {
     lambdaHashingVersion: serverlessConfig.lambdaHashingVersion,
     region: serverlessConfig.region,
   },
-  functions: { getProductsList, getProductsById, postProducts },
+  functions: {
+    getProductsList,
+    getProductsById,
+    postProducts,
+    catalogBatchProcess,
+  },
 };
 
 module.exports = serverlessConfiguration;
