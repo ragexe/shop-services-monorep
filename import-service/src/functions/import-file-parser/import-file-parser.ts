@@ -34,39 +34,25 @@ export const importFileParser = async (
           .promise();
 
         const readFileStream = s3
-          .getObject(
-            {
-              Bucket: `${record.s3.bucket.name}`,
-              Key: `${record.s3.object.key}`,
-            },
-            (error, _) => {
-              logger.error('s3.getObject', error);
-              return Promise.reject(
-                new Error(ErrorMessages.SomethingWentWrong),
-              );
-            },
-          )
+          .getObject({
+            Bucket: `${record.s3.bucket.name}`,
+            Key: `${record.s3.object.key}`,
+          })
           .createReadStream();
 
         let parsedData: unknown[];
         try {
           parsedData = await parser.fromStream(readFileStream);
         } catch (error) {
-          logger.error(error);
+          logger.error('allProcesses', error);
           return Promise.reject(error);
         }
 
         logger.debug(
           `Parsing of [${record.s3.object.key}] finished`,
-          `Parsed data: ${JSON.stringify(parsedData)}`,
+          `Parsed entities: ${JSON.stringify(parsedData)}`,
         );
 
-        const deleteObjectOutput = await s3
-          .deleteObject({
-            Bucket: record.s3.bucket.name,
-            Key: record.s3.object.key,
-          })
-          .promise();
 
         let copyObjectOutput;
         try {
@@ -112,7 +98,7 @@ export const importFileParser = async (
   return await Promise.all(
     allProcesses.map((process) =>
       process.catch((error) => {
-        logger.error(error);
+        logger.error('process', error);
         return Promise.reject(error);
       }),
     ),
