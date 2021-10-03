@@ -8,12 +8,16 @@ import { ErrorMessages } from '../../model';
 import validationSchema from './product-schema';
 
 export type TParserProvider<T = unknown> = {
-  fromStream: (readable: internal.Readable) => Promise<T[]>;
+  fromStream: (readable: internal.Readable, sqs: AWS.SQS) => Promise<T[]>;
 };
 
 export const DEFAULT_PARSER: TParserProvider = {
-  fromStream: async (readable: internal.Readable) => {
+  fromStream: async (readable: internal.Readable, sqsClient) => {
     const result: unknown[] = [];
+    const sqsUrl = process.env.SQS_URL;
+    if (!sqsUrl) throw new Error(ErrorMessages.SQSUrlWasNotProvided);
+
+    const validator = new Validator();
 
     return new Promise((resolve, reject) => {
       try {
@@ -23,10 +27,11 @@ export const DEFAULT_PARSER: TParserProvider = {
         })
           .fromStream(readable)
           .subscribe(
-            (parsedDataRow: { product?: unknown }, lineNumber) => {
-              const validator = new Validator();
+            (parsedDataRow: unknown, lineNumber) => {
+              console.log(parsedDataRow);
+
               const validatorResult = validator.validate(
-                parsedDataRow?.product ?? {},
+                parsedDataRow ?? {},
                 validationSchema,
               );
 
@@ -37,9 +42,32 @@ export const DEFAULT_PARSER: TParserProvider = {
                   )}`,
                 );
                 reject(ErrorMessages.ParsedDataIsInvalid);
+                return;
               }
 
-              result.push(parsedDataRow.product);
+              result.push(parsedDataRow);
+              sqsClient.sendMessage(
+                {
+                  QueueUrl: sqsUrl,
+                  MessageBody: JSON.stringify(parsedDataRow),
+                },
+                (error, data) => {
+                  if (Boolean(error)) {
+                    DefaultLogger.error(
+                      ErrorMessages.SendMessageFailed,
+                      JSON.stringify({ error, data }),
+                    );
+                    throw new Error(ErrorMessages.SendMessageFailed);
+                  } else {
+                    DefaultLogger.debug(
+                      `Successfully data sent: ${JSON.stringify({
+                        QueueUrl: sqsUrl,
+                        MessageBody: JSON.stringify(parsedDataRow),
+                      })}`,
+                    );
+                  }
+                },
+              );
             },
             (error) => {
               DefaultLogger.error('Exception while streaming');
@@ -59,7 +87,7 @@ export const DEFAULT_PARSER: TParserProvider = {
 };
 
 const customNullBooleanStringCellParser: CellParser = (item: string) => {
-  if (item == 'null') {
+  if (item == 'null' || item == '') {
     return null;
   }
   if (item == 'false') {
@@ -72,39 +100,36 @@ const customNullBooleanStringCellParser: CellParser = (item: string) => {
 };
 
 const productColumnConverter = {
-  'product.__typename': 'string',
-  'product.productCode': 'string',
-  'product.name': 'string',
-  'product.slug': 'string',
-  'product.primaryImage': 'string',
-  'product.baseImgUrl': 'string',
-  'product.overrideUrl': customNullBooleanStringCellParser,
-  'product.variant.id': 'string',
-  'product.variant.sku': 'string',
-  'product.variant.salePercentage': 'number',
-  'product.variant.attributes.rating': 'number',
-  'product.variant.attributes.maxOrderQuantity': 'number',
-  'product.variant.attributes.availabilityStatus': 'string',
-  'product.variant.attributes.availabilityText': 'string',
-  'product.variant.attributes.vipAvailabilityStatus':
-    customNullBooleanStringCellParser,
-  'product.variant.attributes.vipAvailabilityText':
-    customNullBooleanStringCellParser,
-  'product.variant.attributes.canAddToBag': 'boolean',
-  'product.variant.attributes.canAddToWishlist': 'boolean',
-  'product.variant.attributes.vipCanAddToBag':
-    customNullBooleanStringCellParser,
-  'product.variant.attributes.onSale': 'boolean',
-  'product.variant.attributes.isNew': customNullBooleanStringCellParser,
-  'product.variant.attributes.featuredFlags': 'array',
-  'product.variant.attributes.__typename': 'string',
-  'product.variant.price.formattedAmount': 'string',
-  'product.variant.price.centAmount': 'number',
-  'product.variant.price.currencyCode': 'string',
-  'product.variant.price.formattedValue': 'number',
-  'product.variant.price.__typename': 'string',
-  'product.variant.listPrice.formattedAmount': 'string',
-  'product.variant.listPrice.centAmount': 'number',
-  'product.variant.listPrice.__typename': 'string',
-  'product.variant.__typename': 'string',
+  __typename: 'string',
+  productCode: 'string',
+  name: 'string',
+  slug: 'string',
+  primaryImage: 'string',
+  baseImgUrl: 'string',
+  overrideUrl: customNullBooleanStringCellParser,
+  'variant.id': 'string',
+  'variant.sku': 'string',
+  'variant.salePercentage': 'number',
+  'variant.attributes.rating': 'number',
+  'variant.attributes.maxOrderQuantity': 'number',
+  'variant.attributes.availabilityStatus': 'string',
+  'variant.attributes.availabilityText': 'string',
+  'variant.attributes.vipAvailabilityStatus': customNullBooleanStringCellParser,
+  'variant.attributes.vipAvailabilityText': customNullBooleanStringCellParser,
+  'variant.attributes.canAddToBag': 'boolean',
+  'variant.attributes.canAddToWishlist': 'boolean',
+  'variant.attributes.vipCanAddToBag': customNullBooleanStringCellParser,
+  'variant.attributes.onSale': 'boolean',
+  'variant.attributes.isNew': customNullBooleanStringCellParser,
+  'variant.attributes.featuredFlags': 'array',
+  'variant.attributes.__typename': 'string',
+  'variant.price.formattedAmount': 'string',
+  'variant.price.centAmount': 'number',
+  'variant.price.currencyCode': 'string',
+  'variant.price.formattedValue': 'number',
+  'variant.price.__typename': 'string',
+  'variant.listPrice.formattedAmount': 'string',
+  'variant.listPrice.centAmount': 'number',
+  'variant.listPrice.__typename': 'string',
+  'variant.__typename': 'string',
 };

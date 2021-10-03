@@ -43,9 +43,11 @@ export const importFileParser = async (
           })
           .createReadStream();
 
+        const sqsQueue = new AWS.SQS();
+
         let parsedData: unknown[];
         try {
-          parsedData = await parser.fromStream(readFileStream);
+          parsedData = await parser.fromStream(readFileStream, sqsQueue);
         } catch (error) {
           logger.error('allProcesses', error);
           return Promise.reject(error);
@@ -54,30 +56,6 @@ export const importFileParser = async (
         logger.debug(
           `Parsing of [${record.s3.object.key}] finished`,
           `Parsed entities: ${JSON.stringify(parsedData)}`,
-        );
-
-        const sqsQueue = new AWS.SQS();
-        sqsQueue.sendMessage(
-          {
-            QueueUrl: sqsUrl,
-            MessageBody: JSON.stringify(parsedData),
-          },
-          (error, data) => {
-            if (Boolean(error)) {
-              logger.error(
-                ErrorMessages.SendMessageFailed,
-                JSON.stringify({ error, data }),
-              );
-              throw new Error(ErrorMessages.SendMessageFailed);
-            } else {
-              logger.debug(
-                `Successfully data sent: ${JSON.stringify({
-                  QueueUrl: sqsUrl,
-                  MessageBody: JSON.stringify(parsedData),
-                })}`,
-              );
-            }
-          },
         );
 
         let copyObjectOutput;
