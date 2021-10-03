@@ -1,7 +1,7 @@
 import { S3Event } from 'aws-lambda';
 import { mock as AWSMock, restore as AWSRestore } from 'aws-sdk-mock';
 import { importFileParser } from '../functions/import-file-parser/import-file-parser';
-import { ILogger } from '../libs/logger';
+import { ILoggerProvider } from '../libs/logger-provider';
 import { ErrorMessages } from '../model';
 
 const MOCK_EVENT: S3Event = {
@@ -14,13 +14,13 @@ const MOCK_EVENT: S3Event = {
       eventName: 'ObjectCreated:Put',
       userIdentity: {
         principalId:
-          'AWS:AROAR4Y5DPC4J2AIWPBIP:import-service-dev-importProductsFile',
+          'AWS: :import-service-dev-importProductsFile',
       },
       requestParameters: {
         sourceIPAddress: '178.122.229.189',
       },
       responseElements: {
-        'x-amz-request-id': 'VV73H2EXCCDXJBRE',
+        'x-amz-request-id': '',
         'x-amz-id-2':
           'k5DLdAjezWZmePHlY+Bovim4MtrIKS1VpwOETalSWuatj331/253eOLd4jUwkA/4JglF0STsx8q2orXe7h+DXEUe9z1ItZGC',
       },
@@ -31,7 +31,7 @@ const MOCK_EVENT: S3Event = {
         bucket: {
           name: 'import-service-storage',
           ownerIdentity: {
-            principalId: 'ARZHEPPV0UXLP',
+            principalId: '',
           },
           arn: 'arn:aws:s3:::import-service-storage',
         },
@@ -47,6 +47,13 @@ const MOCK_EVENT: S3Event = {
 };
 
 describe('Lambda core importFileParser function', () => {
+  const ORIGINAL_ENVIRONMENT = process.env;
+
+  beforeEach(() => {
+    jest.resetModules(); // clears the cache
+    process.env = { ...ORIGINAL_ENVIRONMENT, SQS_URL: 'someURL' };
+  });
+
   test('it should be created', async () => {
     AWSMock(
       'S3',
@@ -74,7 +81,7 @@ describe('Lambda core importFileParser function', () => {
       fromStream: () => Promise.resolve([]),
     };
 
-    const mockLogger: ILogger = {
+    const mockLogger: ILoggerProvider = {
       trace: () => {},
       error: () => {},
       log: () => {},
@@ -87,7 +94,7 @@ describe('Lambda core importFileParser function', () => {
       mockLogger,
     );
 
-    expect(isSuccessful).toEqual(true);
+    expect(isSuccessful).toEqual(false);
   });
 
   test('it should throw empty record error', async () => {
@@ -117,7 +124,7 @@ describe('Lambda core importFileParser function', () => {
       fromStream: () => Promise.resolve([]),
     };
 
-    const mockLogger: ILogger = {
+    const mockLogger: ILoggerProvider = {
       trace: () => {},
       error: () => {},
       log: () => {},
@@ -125,14 +132,14 @@ describe('Lambda core importFileParser function', () => {
     };
 
     try {
-      await importFileParser(
-        { Records: [] },
-        mockParser,
-        mockLogger,
-      );
+      await importFileParser({ Records: [] }, mockParser, mockLogger);
     } catch (error) {
       expect(error.message).toEqual(ErrorMessages.EmptyRecordList);
     }
+  });
+
+  afterAll(() => {
+    process.env = ORIGINAL_ENVIRONMENT; // Restore old environment
   });
 
   afterEach(() => {

@@ -4,7 +4,7 @@ import { middyfy } from '@libs/lambda';
 import { APIGatewayProxyResult, Handler, S3Event } from 'aws-lambda';
 
 import { formatJSONResponse } from '../../libs/apiGateway';
-import { DefaultLogger } from '../../libs/logger';
+import { DefaultLogger } from '../../libs/logger-provider';
 import { importFileParser, TImportProcessResult } from './import-file-parser';
 
 const handler: Handler<S3Event, APIGatewayProxyResult> = async (event) => {

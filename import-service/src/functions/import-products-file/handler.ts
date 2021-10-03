@@ -8,7 +8,7 @@ import {
 } from 'aws-lambda';
 
 import { formResponse200, formResponse400 } from '../../libs/apiGateway';
-import { DefaultLogger } from '../../libs/logger';
+import { DefaultLogger } from '../../libs/logger-provider';
 import { isDebug } from '../functions-helper';
 import { getSignedUrl } from './get-signed-url';
 import { ErrorMessages } from '../../model';

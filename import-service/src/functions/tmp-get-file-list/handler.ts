@@ -4,7 +4,7 @@ import { middyfy } from '@libs/lambda';
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Handler } from 'aws-lambda';
 
 import { formResponse200, formResponse400 } from '../../libs/apiGateway';
-import { DefaultLogger } from '../../libs/logger';
+import { DefaultLogger } from '../../libs/logger-provider';
 import { isDebug } from '../functions-helper';
 import { getFileList } from './get-file-list';
 import { S3 } from 'aws-sdk';

@@ -11,6 +11,7 @@ export const serverlessConfig: {
     uploadFolderName: string;
     parsedFolderName: string;
   };
+  parserQueue: { ref: string; sqsQueueName: string; waitTime: number };
   profileName: string;
   region: AWS['provider']['region'];
   lambdaHashingVersion: AWS['provider']['lambdaHashingVersion'];
@@ -25,6 +26,11 @@ export const serverlessConfig: {
     bucketName: 'import-service-storage',
     uploadFolderName: 'uploaded',
     parsedFolderName: 'parsed',
+  },
+  parserQueue: {
+    ref: 'SQSQueue',
+    sqsQueueName: 'product-service-sqs-queue',
+    waitTime: 20,
   },
   profileName: 'default',
   region: 'eu-west-1',

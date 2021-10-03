@@ -2,7 +2,7 @@ import { S3Event, S3EventRecord } from 'aws-lambda';
 import * as AWS from 'aws-sdk';
 
 import { serverlessConfig } from '../../../serverless.config';
-import { DefaultLogger, ILoggerProvider } from '../../libs/logger';
+import { DefaultLogger, ILoggerProvider } from '../../libs/logger-provider';
 import { ErrorMessages } from '../../model';
 import { DEFAULT_PARSER, TParserProvider } from './parser.provider';
 
@@ -15,6 +15,9 @@ export const importFileParser = async (
   parser: TParserProvider = DEFAULT_PARSER,
   logger: ILoggerProvider = DefaultLogger,
 ): Promise<TImportProcessResult> => {
+  const sqsUrl = process.env.SQS_URL;
+  if (!sqsUrl) throw new Error(ErrorMessages.SQSUrlWasNotProvided);
+
   const eventRecords: S3EventRecord[] = (event?.Records ?? []).filter(
     (record) => record.eventName === 'ObjectCreated:Put',
   );
@@ -53,6 +56,29 @@ export const importFileParser = async (
           `Parsed entities: ${JSON.stringify(parsedData)}`,
         );
 
+        const sqsQueue = new AWS.SQS();
+        sqsQueue.sendMessage(
+          {
+            QueueUrl: sqsUrl,
+            MessageBody: JSON.stringify(parsedData),
+          },
+          (error, data) => {
+            if (Boolean(error)) {
+              logger.error(
+                ErrorMessages.SendMessageFailed,
+                JSON.stringify({ error, data }),
+              );
+              throw new Error(ErrorMessages.SendMessageFailed);
+            } else {
+              logger.debug(
+                `Successfully data sent: ${JSON.stringify({
+                  QueueUrl: sqsUrl,
+                  MessageBody: JSON.stringify(parsedData),
+                })}`,
+              );
+            }
+          },
+        );
 
         let copyObjectOutput;
         try {

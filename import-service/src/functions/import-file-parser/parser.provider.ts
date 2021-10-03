@@ -3,7 +3,7 @@ import { CellParser } from 'csvtojson/v2/Parameters';
 import { Validator } from 'jsonschema';
 import internal from 'stream';
 
-import { DefaultLogger } from '../../libs/logger';
+import { DefaultLogger } from '../../libs/logger-provider';
 import { ErrorMessages } from '../../model';
 import validationSchema from './product-schema';
 
