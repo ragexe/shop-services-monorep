@@ -53,6 +53,17 @@ const serverlessConfiguration: AWS = {
     name: 'aws',
     runtime: 'nodejs14.x',
     profile: serverlessConfig.profileName,
+    iamRoleStatements: [
+      {
+        Effect: 'Allow',
+        Action: ['sqs:*'],
+        Resource: [
+          {
+            'Fn::ImportValue': serverlessConfig.parserQueue.importName,
+          },
+        ],
+      },
+    ],
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,

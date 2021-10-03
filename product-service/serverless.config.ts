@@ -8,6 +8,10 @@ export const serverlessConfig: {
   profileName: string;
   region: AWS['provider']['region'];
   lambdaHashingVersion: AWS['provider']['lambdaHashingVersion'];
+  parserQueue: {
+    importName: string;
+    batchSize: number;
+  };
   environment: {
     UserBaseUrl: string;
     EtlUrl: string;
@@ -24,6 +28,10 @@ export const serverlessConfig: {
   profileName: 'default',
   region: 'eu-west-1',
   lambdaHashingVersion: '20201221',
+  parserQueue: {
+    importName: 'ParsedQueueImportServiceArn',
+    batchSize: 5,
+  },
   environment: {
     UserBaseUrl: process.env.USER_SERVICE_URL ?? '',
     EtlUrl: process.env.ETL_SERVICE_URL ?? '',

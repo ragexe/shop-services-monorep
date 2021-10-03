@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "API-based microservice for importing products",
-    "version" : "2021-09-22T01:34:42Z",
+    "version" : "2021-10-03T16:48:53Z",
     "title" : "import-service-dev",
     "contact" : {
       "name" : "ragexe",
@@ -14,7 +14,7 @@
       "url" : "https://www.github.com"
     }
   },
-  "host" : "llbhmcmrja.execute-api.eu-west-1.amazonaws.com",
+  "host" : "v3r7at6p7j.execute-api.eu-west-1.amazonaws.com",
   "basePath" : "/dev",
   "tags" : [ {
     "name" : "import-service",

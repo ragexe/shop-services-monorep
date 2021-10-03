@@ -132,7 +132,17 @@ const serverlessConfiguration: AWS = {
         Type: 'AWS::SQS::Queue',
         Properties: {
           QueueName: serverlessConfig.parserQueue.sqsQueueName,
-          ReceiveMessageWaitTimeSeconds : serverlessConfig.parserQueue.waitTime,
+          ReceiveMessageWaitTimeSeconds: serverlessConfig.parserQueue.waitTime,
+        },
+      },
+    },
+    Outputs: {
+      SqsQueueArn: {
+        Value: {
+          'Fn::GetAtt': [serverlessConfig.parserQueue.ref, 'Arn'],
+        },
+        Export: {
+          Name: serverlessConfig.parserQueue.exportName,
         },
       },
     },
