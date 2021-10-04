@@ -1,6 +1,6 @@
 {
   "name": "product-service",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "API-based microservices for products",
   "main": "serverless.ts",
   "scripts": {
