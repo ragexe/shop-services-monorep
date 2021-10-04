@@ -28,7 +28,6 @@ export const DEFAULT_PARSER: TParserProvider = {
           .fromStream(readable)
           .subscribe(
             (parsedDataRow: unknown, lineNumber) => {
-              console.log(parsedDataRow);
 
               const validatorResult = validator.validate(
                 parsedDataRow ?? {},
