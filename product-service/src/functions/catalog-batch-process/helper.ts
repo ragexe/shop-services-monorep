@@ -6,6 +6,7 @@ import { DataConsumer, ErrorMessages, Product } from '../../model';
 import { postProductsConsumer } from '../post-products/post-products';
 import { DefaultLogger, ILogger } from './../../libs/logger';
 import validationSchema from './../post-products/product-schema';
+import { serverlessConfig } from '../../../serverless.config';
 
 export type TResult = {
   stored: Product[];
@@ -87,4 +88,31 @@ export const storeProducts: (
   });
 
   return Promise.all(productStoreResults).then(() => result);
+};
+
+export const notifySubscribers: (
+  snsClient: AWS.SNS,
+  snsArn: string | undefined,
+  { isSuccessful, message }: { isSuccessful: boolean; message: string },
+) => void = (snsClient, snsArn, { isSuccessful, message }) => {
+  snsClient.publish(
+    {
+      Subject: isSuccessful ? 'Success' : 'Error',
+      Message: message,
+      TopicArn: snsArn,
+      MessageAttributes: {
+        status: {
+          DataType: 'String',
+          StringValue: isSuccessful
+            ? serverlessConfig.notificationQueue.successStatus
+            : serverlessConfig.notificationQueue.failStatus,
+        },
+      },
+    },
+    (error, _) => {
+      if (error) {
+        DefaultLogger.error(ErrorMessages.NotificationFailed, error);
+      }
+    },
+  );
 };

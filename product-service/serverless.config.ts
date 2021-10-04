@@ -12,6 +12,14 @@ export const serverlessConfig: {
     importName: string;
     batchSize: number;
   };
+  notificationQueue: {
+    ref: string;
+    topicName: string;
+    successEmail: string;
+    successStatus: string;
+    failEmail: string;
+    failStatus: string;
+  };
   environment: {
     UserBaseUrl: string;
     EtlUrl: string;
@@ -31,6 +39,14 @@ export const serverlessConfig: {
   parserQueue: {
     importName: 'catalogItemsQueue',
     batchSize: 5,
+  },
+  notificationQueue: {
+    ref: 'SNSTopic',
+    topicName: 'createProductTopic',
+    successEmail: process.env.NOTIFY_SUCCESS_EMAIL ?? '',
+    successStatus: 'success',
+    failEmail: process.env.NOTIFY_FAIL_EMAIL ?? '',
+    failStatus: 'fail',
   },
   environment: {
     UserBaseUrl: process.env.USER_SERVICE_URL ?? '',
