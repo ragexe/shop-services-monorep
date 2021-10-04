@@ -65,6 +65,7 @@ describe('Lambda core postProducts function', () => {
 
     const logger: ILogger = {
       trace: () => {},
+      log: () => {},
       error: () => {},
     };
 
@@ -86,6 +87,7 @@ describe('Lambda core postProducts function', () => {
 
     const logger: ILogger = {
       trace: () => {},
+      log: () => {},
       error: () => {},
     };
 

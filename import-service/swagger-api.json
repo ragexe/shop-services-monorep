@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "API-based microservice for importing products",
-    "version" : "2021-10-03T16:48:53Z",
+    "version" : "2021-10-04T14:59:05Z",
     "title" : "import-service-dev",
     "contact" : {
       "name" : "ragexe",

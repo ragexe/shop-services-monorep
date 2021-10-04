@@ -6,7 +6,7 @@ import { APIGatewayProxyResult, Handler, SQSEvent } from 'aws-lambda';
 
 import { formatJSONResponse } from '../../libs/apiGateway';
 import { DefaultLogger } from '../../libs/logger';
-import { notifySubscribers, storeProducts, TResult } from './helper';
+import { notifySubscribers, storeProducts, TResult } from './catalog-batch-process';
 import { serverlessConfig } from '../../../serverless.config';
 import { ErrorMessages } from '../../model';
 

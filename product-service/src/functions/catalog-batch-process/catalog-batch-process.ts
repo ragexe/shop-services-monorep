@@ -2,11 +2,11 @@ import 'source-map-support/register';
 
 import { Validator, ValidatorResult } from 'jsonschema';
 
+import { serverlessConfig } from '../../../serverless.config';
 import { DataConsumer, ErrorMessages, Product } from '../../model';
 import { postProductsConsumer } from '../post-products/post-products';
 import { DefaultLogger, ILogger } from './../../libs/logger';
 import validationSchema from './../post-products/product-schema';
-import { serverlessConfig } from '../../../serverless.config';
 
 export type TResult = {
   stored: Product[];
@@ -69,9 +69,15 @@ export const storeProducts: (
       error?: any;
     } = await dataConsumer
       .store(product)
-      .then(() => {
-        return { product };
-      })
+      .then(
+        () => {
+          return { product };
+        },
+        (error) => {
+          logger.error(`Failed to store data`, error);
+          return { product, error };
+        },
+      )
       .catch((error) => {
         logger.error(`Failed to store data`, error);
         return { product, error };

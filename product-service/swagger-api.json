@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "API-based microservices for products",
-    "version" : "2021-10-03T16:53:42Z",
+    "version" : "2021-10-04T14:57:34Z",
     "title" : "product-service-dev",
     "contact" : {
       "name" : "ragexe",
