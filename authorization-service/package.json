@@ -1,9 +1,10 @@
 {
   "name": "authorization-service",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
+    "invoke:local:basic-authorizer": "npx sls invoke local -f basicAuthorizer --path src/functions/basic-authorizer/mock.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "npx serverless deploy",
     "release": "npm run test && npm run deploy"

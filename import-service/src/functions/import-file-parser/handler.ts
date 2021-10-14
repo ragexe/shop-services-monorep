@@ -17,7 +17,7 @@ const handler: Handler<S3Event, APIGatewayProxyResult> = async (event) => {
   } catch (error) {
     DefaultLogger.error('ImportFileParser', error);
 
-    switch (error) {
+    switch (error?.message) {
       default:
         return formatJSONResponse(
           {

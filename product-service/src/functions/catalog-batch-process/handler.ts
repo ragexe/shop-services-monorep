@@ -24,7 +24,7 @@ const handler: Handler<SQSEvent, APIGatewayProxyResult> = async (event) => {
       event.Records.map((record) => JSON.parse(record.body)),
     );
   } catch (error) {
-    switch (error) {
+    switch (error?.message) {
       default:
         notifySubscribers(snsClient, snsArn, {
           isSuccessful: false,

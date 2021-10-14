@@ -8,53 +8,37 @@ import {
 } from 'aws-lambda';
 
 import { DefaultLogger } from '../../libs/logger-provider';
-import { generatePolicy } from './basic-authorizer';
 import { ErrorMessages } from '../../model';
+import { authorizeAPIGateway } from './basic-authorizer';
 
 const handler: Handler<
   APIGatewayTokenAuthorizerEvent,
   APIGatewayAuthorizerResult
 > = (event, _, callback) => {
   DefaultLogger.trace(event, 'basic-authorizer');
+  if (event.type !== 'TOKEN') return callback('Unauthorized');
 
-  if (event.type !== 'TOKEN') {
-    return callback('Unauthorized');
-  }
+  let result: APIGatewayAuthorizerResult;
 
   try {
     const { authorizationToken, methodArn } = event;
-    const encodedCredentials = authorizationToken.split('Basic ')[0];
-    const buffer = Buffer.from(encodedCredentials, 'base64');
-    const plainCredentialsString = buffer.toString('utf-8');
-    const [login, password] = plainCredentialsString.split(':');
-
-    DefaultLogger.log('Credentials were provided ', { login, password });
-
-    const isUserExist: boolean =
-      process.env[login] !== null && process.env[login] !== undefined;
-
-    if (!isUserExist) {
-      return callback('Unauthorized');
-    }
-
-    const isPasswordMatch: boolean =
-      isUserExist && process.env[login] === password;
-
-    if (!isPasswordMatch) {
-      return callback('Forbidden');
-    }
-
-    const apiGatewayAuthorizerResult = generatePolicy({
-      principalId: encodedCredentials,
-      allow: true,
-      methodArn,
-    });
-
-    return callback(null, apiGatewayAuthorizerResult);
+    result = authorizeAPIGateway({ authorizationToken, methodArn });
   } catch (error) {
-    DefaultLogger.error(ErrorMessages.SomethingWentWrong, error);
-    callback(error);
+    switch (error?.message) {
+      case ErrorMessages.NoAuthTokenProvided:
+      case ErrorMessages.UserDoesNotExist:
+      case ErrorMessages.WrongAuthorizationTokenEncoding:
+        return callback('Unauthorized');
+      case ErrorMessages.PasswordDoesNotMatch:
+        return callback('Forbidden');
+      case ErrorMessages.SomethingWentWrong:
+      default:
+        DefaultLogger.error(ErrorMessages.SomethingWentWrong, error);
+        return callback(error);
+    }
   }
+
+  return callback(null, result);
 };
 
 export const main = middyfy(handler);
