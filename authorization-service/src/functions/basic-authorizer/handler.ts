@@ -1,11 +1,7 @@
 import 'source-map-support/register';
 
 import { middyfy } from '@libs/lambda';
-import {
-  APIGatewayAuthorizerResult,
-  APIGatewayTokenAuthorizerEvent,
-  Handler,
-} from 'aws-lambda';
+import { APIGatewayAuthorizerResult, APIGatewayTokenAuthorizerEvent, Handler } from 'aws-lambda';
 
 import { DefaultLogger } from '../../libs/logger-provider';
 import { ErrorMessages } from '../../model';
@@ -29,8 +25,6 @@ const handler: Handler<
       case ErrorMessages.UserDoesNotExist:
       case ErrorMessages.WrongAuthorizationTokenEncoding:
         return callback('Unauthorized');
-      case ErrorMessages.PasswordDoesNotMatch:
-        return callback('Forbidden');
       case ErrorMessages.SomethingWentWrong:
       default:
         DefaultLogger.error(ErrorMessages.SomethingWentWrong, error);

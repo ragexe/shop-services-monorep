@@ -1,6 +1,5 @@
 import { APIGatewayAuthorizerResult } from 'aws-lambda';
 
-import { ILoggerProvider } from '../../libs/logger-provider';
 import { ErrorMessages } from '../../model';
 
 export const authorizeAPIGateway: (
@@ -11,14 +10,15 @@ export const authorizeAPIGateway: (
     authorizationToken: string;
     methodArn: string;
   },
-  logger?: ILoggerProvider,
+  policyGenerator?: IPolicyGeneratorProvider,
 ) => APIGatewayAuthorizerResult = (
   { authorizationToken, methodArn },
+  policyGenerator = DEFAULT_POLICY_GENERATOR_PROVIDER,
 ) => {
   if (!authorizationToken) {
     throw new Error(ErrorMessages.NoAuthTokenProvided);
   }
-  
+
   if (!authorizationToken.startsWith('Basic ')) {
     throw new Error(ErrorMessages.WrongAuthorizationTokenEncoding);
   }
@@ -39,39 +39,40 @@ export const authorizeAPIGateway: (
   const isPasswordMatch: boolean =
     isUserExist && process.env[login] === password;
 
-  if (!isPasswordMatch) {
-    throw new Error(ErrorMessages.PasswordDoesNotMatch);
-  }
-
-  const apiGatewayAuthorizerResult = generatePolicy({
+  const apiGatewayAuthorizerResult = policyGenerator.generate({
     principalId: encodedCredentials,
-    allow: true,
+    allow: isPasswordMatch,
     methodArn,
   });
 
   return apiGatewayAuthorizerResult;
 };
 
-export const generatePolicy: ({
-  allow,
-  principalId,
-  methodArn,
-}: {
-  principalId: string;
-  allow: boolean;
-  methodArn: string;
-}) => APIGatewayAuthorizerResult = ({ principalId, allow, methodArn }) => {
-  return {
+export interface IPolicyGeneratorProvider {
+  generate: ({
+    allow,
     principalId,
-    policyDocument: {
-      Version: '2012-10-17',
-      Statement: [
-        {
-          Action: 'execute-api:Invoke',
-          Effect: allow ? 'Allow' : 'Deny',
-          Resource: methodArn,
-        },
-      ],
-    },
-  };
+    methodArn,
+  }: {
+    principalId: string;
+    allow: boolean;
+    methodArn: string;
+  }) => APIGatewayAuthorizerResult;
+}
+export const DEFAULT_POLICY_GENERATOR_PROVIDER: IPolicyGeneratorProvider = {
+  generate: ({ principalId, allow, methodArn }) => {
+    return {
+      principalId,
+      policyDocument: {
+        Version: '2012-10-17',
+        Statement: [
+          {
+            Action: 'execute-api:Invoke',
+            Effect: allow ? 'Allow' : 'Deny',
+            Resource: methodArn,
+          },
+        ],
+      },
+    };
+  },
 };
