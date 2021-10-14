@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "API-based microservice for importing products",
-    "version" : "2021-10-14T21:15:00Z",
+    "version" : "2021-10-14T21:35:39Z",
     "title" : "import-service-dev",
     "contact" : {
       "name" : "ragexe",
@@ -59,6 +59,18 @@
           },
           "400" : {
             "description" : "400 response",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseWithMessage"
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseWithMessage"
+            }
+          },
+          "403" : {
+            "description" : "403 response",
             "schema" : {
               "$ref" : "#/definitions/ResponseWithMessage"
             }

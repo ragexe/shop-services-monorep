@@ -51,6 +51,18 @@ const lambdaDescription: TLambdaDescription = {
                 'application/json': 'ResponseWithMessage',
               },
             },
+            {
+              statusCode: '401',
+              responseModels: {
+                'application/json': 'ResponseWithMessage',
+              },
+            },
+            {
+              statusCode: '403',
+              responseModels: {
+                'application/json': 'ResponseWithMessage',
+              },
+            },
           ],
         },
         authorizer: {
