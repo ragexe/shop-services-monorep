@@ -17,6 +17,11 @@ export const serverlessConfig: {
     waitTime: number;
     exportName: string;
   };
+  authorizer: {
+    importName: string;
+    ref: string;
+    headerName: string;
+  };
   profileName: string;
   region: AWS['provider']['region'];
   lambdaHashingVersion: AWS['provider']['lambdaHashingVersion'];
@@ -36,7 +41,12 @@ export const serverlessConfig: {
     ref: 'SQSQueue',
     sqsQueueName: 'catalog-items-queue',
     waitTime: 20,
-    exportName: 'catalogItemsQueue'
+    exportName: 'catalogItemsQueue',
+  },
+  authorizer: {
+    ref: 'BasicAuthorizerARN',
+    importName: 'basicAuthorizer',
+    headerName: 'Authorization',
   },
   profileName: 'default',
   region: 'eu-west-1',

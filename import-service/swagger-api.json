@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "API-based microservice for importing products",
-    "version" : "2021-10-14T16:17:02Z",
+    "version" : "2021-10-14T21:15:00Z",
     "title" : "import-service-dev",
     "contact" : {
       "name" : "ragexe",
@@ -65,7 +65,7 @@
           }
         },
         "security" : [ {
-          "basicAuthorizer" : [ ]
+          "BasicAuthorizerARN" : [ ]
         } ]
       },
       "options" : {
@@ -140,7 +140,7 @@
     }
   },
   "securityDefinitions" : {
-    "basicAuthorizer" : {
+    "BasicAuthorizerARN" : {
       "type" : "apiKey",
       "name" : "Authorization",
       "in" : "header",

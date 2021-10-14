@@ -54,11 +54,13 @@ const lambdaDescription: TLambdaDescription = {
           ],
         },
         authorizer: {
-          arn: 'arn:aws:lambda:eu-west-1:130520676536:function:authorization-service-dev-basicAuthorizer',
-          identitySource: 'method.request.header.Authorization',
-          name: 'basicAuthorizer',
+          name: serverlessConfig.authorizer.ref,
+          arn: {
+            'Fn::ImportValue': serverlessConfig.authorizer.importName,
+          },
           resultTtlInSeconds: 0,
-          type: 'TOKEN',
+          identitySource: `method.request.header.${serverlessConfig.authorizer.headerName}`,
+          type: 'token',
         },
       },
     },

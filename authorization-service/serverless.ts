@@ -29,6 +29,18 @@ const serverlessConfiguration: AWS = {
     },
     lambdaHashingVersion: '20201221',
   },
+  resources: {
+    Outputs: {
+      [serverlessConfig.authorizer.ref]: {
+        Value: {
+          'Fn::GetAtt': ['BasicAuthorizerLambdaFunction', 'Arn'],
+        },
+        Export: {
+          Name: serverlessConfig.authorizer.exportName,
+        },
+      },
+    },
+  },
   functions: { basicAuthorizer },
 };
 
