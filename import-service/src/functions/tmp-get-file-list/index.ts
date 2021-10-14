@@ -1,7 +1,8 @@
 import { handlerPath } from '@libs/handlerResolver';
 import { serverlessConfig } from '../../../serverless.config';
+import { TLambdaDescription } from '../functions-helper';
 
-export default {
+const lambdaDescription: TLambdaDescription = {
   handler: `${handlerPath(__dirname)}/handler.main`,
   events: [
     {
@@ -18,13 +19,14 @@ export default {
         cors: true,
         documentation: {
           summary: 'Returns list of uploaded/parsed files',
-          description: 'Interacts with S3 AWS service to provide bucket content',
+          description:
+            'Interacts with S3 AWS service to provide bucket content',
           tags: [serverlessConfig.serviceName],
           queryParams: [
             {
               name: 'debug',
               description: 'If true the API response contains event object',
-            }
+            },
           ],
           methodResponses: [
             {
@@ -48,3 +50,5 @@ export default {
     },
   ],
 };
+
+export default lambdaDescription;

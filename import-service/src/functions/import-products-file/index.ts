@@ -1,7 +1,8 @@
 import { handlerPath } from '@libs/handlerResolver';
 import { serverlessConfig } from '../../../serverless.config';
+import { TLambdaDescription } from '../functions-helper';
 
-export default {
+const lambdaDescription: TLambdaDescription = {
   handler: `${handlerPath(__dirname)}/handler.main`,
   events: [
     {
@@ -53,3 +54,5 @@ export default {
     },
   ],
 };
+
+export default lambdaDescription;
