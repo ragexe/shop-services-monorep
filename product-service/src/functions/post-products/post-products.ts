@@ -10,7 +10,7 @@ import { getProductDTO } from './../../model';
 import validationSchema from './product-schema';
 import { postRequestProductSchema } from './schema';
 
-const postProductsConsumer: DataConsumer<Product> = {
+export const postProductsConsumer: DataConsumer<Product> = {
   store: async (product) => {
     const productDTO = getProductDTO(product);
     const databaseClient = getDataBaseClient();

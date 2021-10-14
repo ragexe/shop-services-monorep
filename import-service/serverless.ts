@@ -101,6 +101,15 @@ const serverlessConfiguration: AWS = {
         Action: 's3:*',
         Resource: [`arn:aws:s3:::${serverlessConfig.storage.bucketName}/*`],
       },
+      {
+        Effect: 'Allow',
+        Action: 'sqs:*',
+        Resource: [
+          {
+            'Fn::GetAtt': [serverlessConfig.parserQueue.ref, 'Arn'],
+          },
+        ],
+      },
     ],
     apiGateway: {
       minimumCompressionSize: 1024,
@@ -110,9 +119,33 @@ const serverlessConfiguration: AWS = {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED:
         serverlessConfig.environment.awsNodejsConnectionReuseEnabled,
       IS_ACTIVE_LOGGER: serverlessConfig.environment.isLoggerActive,
+      SQS_URL: {
+        Ref: serverlessConfig.parserQueue.ref,
+      },
     },
     lambdaHashingVersion: serverlessConfig.lambdaHashingVersion,
     region: serverlessConfig.region,
+  },
+  resources: {
+    Resources: {
+      [serverlessConfig.parserQueue.ref]: {
+        Type: 'AWS::SQS::Queue',
+        Properties: {
+          QueueName: serverlessConfig.parserQueue.sqsQueueName,
+          ReceiveMessageWaitTimeSeconds: serverlessConfig.parserQueue.waitTime,
+        },
+      },
+    },
+    Outputs: {
+      SqsQueueArn: {
+        Value: {
+          'Fn::GetAtt': [serverlessConfig.parserQueue.ref, 'Arn'],
+        },
+        Export: {
+          Name: serverlessConfig.parserQueue.exportName,
+        },
+      },
+    },
   },
   functions: { importProductsFile, importFileParser, temporaryFileCheck },
 };

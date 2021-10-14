@@ -1,0 +1,20 @@
+{
+  "Records": [
+    {
+      "messageId": "30017bd7-3f4e-49d7-a02d-9ef226c22b16",
+      "receiptHandle": "AQEBQcmEHZcahYS/v2Dv8wclEm5Xqris3oyxE9Q+2NhOB8j3t9Qj6X/KZ0w8n7h80rBVKJfiZ2O2ysan259jiwBJXjlkVFJQomrKRmMxkw3d3SlpdkgiYm+fSnNIPnF+5ELka9qn++9JicE4xt4ybrgh6ZTPyhtydhwKFtu6jcgd9Ug0E5JgvZQV2cN9fzoFknn9LuLeC12HYpUkT5LvqM2/BkrrbjiKQP19bpvayui+5Ofv3nJbC47SFk5H0HIuLsCm8+tnakSKuEPf5pKjwEFwJzWRGxKZhe+fipbWquUzjd7VxxHqQVoWvNPGF5Nj8bwkWnsGdpW3Xd+R/iKYpSsKU1FTBD+Hf4RhUyqvBGLldBugVIR2Hv07k53CeJ/id1oDNVkQ9n2lF+0mWkVc6jWVqQ==",
+      "body": "[{\"__typename\":\"SingleVariantProduct\",\"productCode\":\"60274\",\"name\":\"Police Lighthouse Capture\",\"slug\":\"elite-police-lighthouse-capture-60274\",\"primaryImage\":\"https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1\",\"baseImgUrl\":\"https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg\",\"overrideUrl\":null,\"variant\":{\"id\":\"6297093\",\"sku\":\"6297093\",\"salePercentage\":0,\"attributes\":{\"rating\":5,\"maxOrderQuantity\":3,\"availabilityStatus\":\"E_AVAILABLE\",\"availabilityText\":\"Available now\",\"vipAvailabilityStatus\":null,\"vipAvailabilityText\":null,\"canAddToBag\":true,\"canAddToWishlist\":true,\"vipCanAddToBag\":null,\"onSale\":false,\"isNew\":null,\"featuredFlags\":[],\"__typename\":\"ProductAttributes\"},\"price\":{\"formattedAmount\":\"$29.99\",\"centAmount\":2999,\"currencyCode\":\"USD\",\"formattedValue\":29.99,\"__typename\":\"Price\"},\"listPrice\":{\"formattedAmount\":\"$29.99\",\"centAmount\":2999,\"__typename\":\"Price\"},\"__typename\":\"ProductVariant\"}},{\"__typename\":\"SingleVariantProduct\",\"productCode\":\"60274\",\"name\":\"Police Lighthouse Capture\",\"slug\":\"elite-police-lighthouse-capture-60274\",\"primaryImage\":\"https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg?fit=bounds&format=jpg&quality=80&width=640&height=640&dpr=1\",\"baseImgUrl\":\"https://www.lego.com/cdn/cs/set/assets/blt59750311b6e356c0/60274.jpg\",\"overrideUrl\":null,\"variant\":{\"id\":\"6297093\",\"sku\":\"6297093\",\"salePercentage\":0,\"attributes\":{\"rating\":5,\"maxOrderQuantity\":3,\"availabilityStatus\":\"E_AVAILABLE\",\"availabilityText\":\"Available now\",\"vipAvailabilityStatus\":null,\"vipAvailabilityText\":null,\"canAddToBag\":true,\"canAddToWishlist\":true,\"vipCanAddToBag\":null,\"onSale\":false,\"isNew\":null,\"featuredFlags\":[],\"__typename\":\"ProductAttributes\"},\"price\":{\"formattedAmount\":\"$29.99\",\"centAmount\":2999,\"currencyCode\":\"USD\",\"formattedValue\":29.99,\"__typename\":\"Price\"},\"listPrice\":{\"formattedAmount\":\"$29.99\",\"centAmount\":2999,\"__typename\":\"Price\"},\"__typename\":\"ProductVariant\"}}]",
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1633286352085",
+        "SenderId": "AROAR4Y5DPC4PRWRLOCCP:import-service-dev-importFileParser",
+        "ApproximateFirstReceiveTimestamp": "1633286352089"
+      },
+      "messageAttributes": {},
+      "md5OfBody": "24498fa207cded5e7bb0cf9f24d85283",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:eu-west-1:130520676536:product-service-sqs-queue",
+      "awsRegion": "eu-west-1"
+    }
+  ]
+}

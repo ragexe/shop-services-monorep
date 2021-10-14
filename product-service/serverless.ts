@@ -1,6 +1,7 @@
 import packageJSON from './package.json';
 import { DOCUMENTATION_MODELS } from './serverless-documentation-models';
 import { serverlessConfig } from './serverless.config';
+import catalogBatchProcess from './src/functions/catalog-batch-process';
 import getProductsById from './src/functions/get-products-by-id';
 import getProductsList from './src/functions/get-products-list';
 import postProducts from './src/functions/post-products';
@@ -52,6 +53,26 @@ const serverlessConfiguration: AWS = {
     name: 'aws',
     runtime: 'nodejs14.x',
     profile: serverlessConfig.profileName,
+    iamRoleStatements: [
+      {
+        Effect: 'Allow',
+        Action: ['sqs:*'],
+        Resource: [
+          {
+            'Fn::ImportValue': serverlessConfig.parserQueue.importName,
+          },
+        ],
+      },
+      {
+        Effect: 'Allow',
+        Action: ['sns:*'],
+        Resource: [
+          {
+            Ref: serverlessConfig.notificationQueue.ref,
+          },
+        ],
+      },
+    ],
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
@@ -65,11 +86,55 @@ const serverlessConfiguration: AWS = {
       PG_USERNAME: serverlessConfig.environment.pgUsername,
       PG_PASSWORD: serverlessConfig.environment.pgPassword,
       IS_ACTIVE_LOGGER: serverlessConfig.environment.isLoggerActive,
+      SNS_ARN: {
+        Ref: serverlessConfig.notificationQueue.ref,
+      },
     },
     lambdaHashingVersion: serverlessConfig.lambdaHashingVersion,
     region: serverlessConfig.region,
   },
-  functions: { getProductsList, getProductsById, postProducts },
+  resources: {
+    Resources: {
+      [serverlessConfig.notificationQueue.ref]: {
+        Type: 'AWS::SNS::Topic',
+        Properties: {
+          TopicName: serverlessConfig.notificationQueue.topicName,
+        },
+      },
+      SNSSubscriptionProductImportSuccess: {
+        Type: 'AWS::SNS::Subscription',
+        Properties: {
+          Endpoint: serverlessConfig.notificationQueue.successEmail,
+          Protocol: 'email',
+          TopicArn: {
+            Ref: serverlessConfig.notificationQueue.ref,
+          },
+          FilterPolicy: {
+            status: [serverlessConfig.notificationQueue.successStatus],
+          },
+        },
+      },
+      SNSSubscriptionProductImportFail: {
+        Type: 'AWS::SNS::Subscription',
+        Properties: {
+          Endpoint: serverlessConfig.notificationQueue.failEmail,
+          Protocol: 'email',
+          TopicArn: {
+            Ref: serverlessConfig.notificationQueue.ref,
+          },
+          FilterPolicy: {
+            status: [serverlessConfig.notificationQueue.failStatus],
+          },
+        },
+      },
+    },
+  },
+  functions: {
+    getProductsList,
+    getProductsById,
+    postProducts,
+    catalogBatchProcess,
+  },
 };
 
 module.exports = serverlessConfiguration;

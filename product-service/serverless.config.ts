@@ -8,6 +8,18 @@ export const serverlessConfig: {
   profileName: string;
   region: AWS['provider']['region'];
   lambdaHashingVersion: AWS['provider']['lambdaHashingVersion'];
+  parserQueue: {
+    importName: string;
+    batchSize: number;
+  };
+  notificationQueue: {
+    ref: string;
+    topicName: string;
+    successEmail: string;
+    successStatus: string;
+    failEmail: string;
+    failStatus: string;
+  };
   environment: {
     UserBaseUrl: string;
     EtlUrl: string;
@@ -24,6 +36,18 @@ export const serverlessConfig: {
   profileName: 'default',
   region: 'eu-west-1',
   lambdaHashingVersion: '20201221',
+  parserQueue: {
+    importName: 'catalogItemsQueue',
+    batchSize: 5,
+  },
+  notificationQueue: {
+    ref: 'SNSTopic',
+    topicName: 'createProductTopic',
+    successEmail: process.env.NOTIFY_SUCCESS_EMAIL ?? '',
+    successStatus: 'success',
+    failEmail: process.env.NOTIFY_FAIL_EMAIL ?? '',
+    failStatus: 'fail',
+  },
   environment: {
     UserBaseUrl: process.env.USER_SERVICE_URL ?? '',
     EtlUrl: process.env.ETL_SERVICE_URL ?? '',
