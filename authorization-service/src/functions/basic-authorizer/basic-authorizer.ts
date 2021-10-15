@@ -32,10 +32,6 @@ export const authorizeAPIGateway: (
   const isUserExist: boolean =
     process.env[login] !== null && process.env[login] !== undefined;
 
-  if (!isUserExist) {
-    throw new Error(ErrorMessages.UserDoesNotExist);
-  }
-
   const isPasswordMatch: boolean =
     isUserExist && process.env[login] === password;
 

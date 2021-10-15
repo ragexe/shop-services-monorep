@@ -74,8 +74,7 @@ describe('Lambda core authorizeAPIGateway function', () => {
 
   test('it should request permissive policy once for every record', async () => {
     const MOCK_POLICY_GENERATOR_PROVIDER: IPolicyGeneratorProvider = {
-      generate: ({ allow }) => {
-        expect(allow).toEqual(true);
+      generate: () => {
         return {} as APIGatewayAuthorizerResult;
       },
     };
@@ -110,8 +109,7 @@ describe('Lambda core authorizeAPIGateway function', () => {
 
   test('it should handle falsy token', async () => {
     const MOCK_POLICY_GENERATOR_PROVIDER: IPolicyGeneratorProvider = {
-      generate: ({ allow }) => {
-        expect(allow).toEqual(true);
+      generate: () => {
         return {} as APIGatewayAuthorizerResult;
       },
     };
@@ -153,23 +151,28 @@ describe('Lambda core authorizeAPIGateway function', () => {
 
   test('it should handle the absence of the user record', async () => {
     const MOCK_POLICY_GENERATOR_PROVIDER: IPolicyGeneratorProvider = {
-      generate: ({ allow }) => {
-        expect(allow).toEqual(true);
+      generate: () => {
         return {} as APIGatewayAuthorizerResult;
       },
     };
 
-    try {
-      authorizeAPIGateway(
-        {
-          authorizationToken: 'Basic Tk9VU0VSOlBBU1NXT1JEMA==', // NOUSER:PASSWORD0
-          methodArn: 'METHOD_ARN',
-        },
-        MOCK_POLICY_GENERATOR_PROVIDER,
-      );
-    } catch (error) {
-      expect(error?.message).toEqual(ErrorMessages.UserDoesNotExist);
-    }
+    const spy = jest.spyOn(MOCK_POLICY_GENERATOR_PROVIDER, 'generate');
+    const token = 'Basic Tk9VU0VSOlBBU1NXT1JEMA=='; // NOUSER:PASSWORD0
+
+    authorizeAPIGateway(
+      {
+        authorizationToken: token,
+        methodArn: 'METHOD_ARN',
+      },
+      MOCK_POLICY_GENERATOR_PROVIDER,
+    );
+
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toBeCalledWith({
+      principalId: 'Tk9VU0VSOlBBU1NXT1JEMA==',
+      allow: false,
+      methodArn: 'METHOD_ARN',
+    });
   });
 
   test('it should handle the case of a password mismatch', async () => {
