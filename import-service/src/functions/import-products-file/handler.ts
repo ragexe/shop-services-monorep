@@ -25,7 +25,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   } catch (error) {
     DefaultLogger.error('Lambda handler exception');
 
-    switch (error) {
+    switch (error?.message) {
       case ErrorMessages.InvalidFileName:
       case ErrorMessages.WrongFileExtension:
       default:

@@ -1,15 +1,9 @@
 import { handlerPath } from '@libs/handlerResolver';
-import { AWS } from '@serverless/typescript';
 
 import { serverlessConfig } from '../../../serverless.config';
+import { TLambdaDescription } from '../functions-helper';
 
-type TEvents = NonNullable<AWS['functions']>[string]['events'];
-type TLambdaDescription = {
-  handler: string;
-  events: TEvents;
-};
-
-const val: TLambdaDescription = {
+const lambdaDescription: TLambdaDescription = {
   handler: `${handlerPath(__dirname)}/handler.main`,
   events: [
     {
@@ -23,4 +17,4 @@ const val: TLambdaDescription = {
   ],
 };
 
-export default val;
+export default lambdaDescription;

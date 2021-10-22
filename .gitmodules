@@ -1,3 +1,4 @@
 [submodule "cloud-development-course-initial"]
 	path = cloud-development-course-initial
-	url = git@github.com:EPAM-JS-Competency-center/cloud-development-course-initial.git
+	url = https://github.com/EPAM-JS-Competency-center/cloud-development-course-initial.git
+	branch = main

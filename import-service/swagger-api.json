@@ -2,7 +2,7 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "API-based microservice for importing products",
-    "version" : "2021-10-04T14:59:05Z",
+    "version" : "2021-10-14T23:34:01Z",
     "title" : "import-service-dev",
     "contact" : {
       "name" : "ragexe",
@@ -44,6 +44,11 @@
           "description" : "Name of file to upload",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -57,8 +62,23 @@
             "schema" : {
               "$ref" : "#/definitions/ResponseWithMessage"
             }
+          },
+          "401" : {
+            "description" : "401 response",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseWithMessage"
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseWithMessage"
+            }
           }
-        }
+        },
+        "security" : [ {
+          "BasicAuthorizerARN" : [ ]
+        } ]
       },
       "options" : {
         "consumes" : [ "application/json" ],
@@ -129,6 +149,14 @@
           }
         }
       }
+    }
+  },
+  "securityDefinitions" : {
+    "BasicAuthorizerARN" : {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header",
+      "x-amazon-apigateway-authtype" : "custom"
     }
   },
   "definitions" : {

@@ -1,7 +1,8 @@
 import { handlerPath } from '@libs/handlerResolver';
 import { serverlessConfig } from '../../../serverless.config';
+import { TLambdaDescription } from '../functions-helper';
 
-export default {
+const lambdaDescription: TLambdaDescription = {
   handler: `${handlerPath(__dirname)}/handler.main`,
   events: [
     {
@@ -13,6 +14,9 @@ export default {
             querystrings: {
               name: true,
               debug: false,
+            },
+            headers: {
+              Authorization: true,
             },
           },
         },
@@ -47,9 +51,32 @@ export default {
                 'application/json': 'ResponseWithMessage',
               },
             },
+            {
+              statusCode: '401',
+              responseModels: {
+                'application/json': 'ResponseWithMessage',
+              },
+            },
+            {
+              statusCode: '403',
+              responseModels: {
+                'application/json': 'ResponseWithMessage',
+              },
+            },
           ],
+        },
+        authorizer: {
+          name: serverlessConfig.authorizer.ref,
+          arn: {
+            'Fn::ImportValue': serverlessConfig.authorizer.importName,
+          },
+          resultTtlInSeconds: 0,
+          identitySource: `method.request.header.${serverlessConfig.authorizer.headerName}`,
+          type: 'token',
         },
       },
     },
   ],
 };
+
+export default lambdaDescription;

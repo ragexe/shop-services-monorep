@@ -57,6 +57,23 @@ export const getDataBaseClient = () => {
   });
 };
 
+export interface Models {
+  'application/json':
+    | string
+    | {
+        schema: {
+          type: string;
+          items: string;
+        };
+      };
+}
+
+export interface MethodResponseClass {
+  statusCode: string;
+  responseBody?: { description: string };
+  responseModels: Models;
+}
+
 export interface Documentation {
   summary: string;
   tags: string[];
@@ -68,23 +85,6 @@ export interface Documentation {
     required?: boolean;
   }[];
   methodResponses?: Array<MethodResponseClass | string>;
-}
-
-export interface MethodResponseClass {
-  statusCode: string;
-  responseBody?: { description: string };
-  responseModels: Models;
-}
-
-export interface Models {
-  'application/json':
-    | string
-    | {
-        schema: {
-          type: string;
-          items: string;
-        };
-      };
 }
 
 type TAWSFunctionEvent = NonNullable<
@@ -110,3 +110,8 @@ export type TAWSFunctionCustomEvent = (
 
 export const isDebug: (event: ProxyEvent) => boolean = (event: ProxyEvent) =>
   event.queryStringParameters?.debug === 'true';
+
+export type TLambdaDescription = {
+  handler: string;
+  events: TAWSFunctionCustomEvent;
+};

@@ -21,7 +21,7 @@ const handler: Handler<APIGatewayProxyEvent, APIGatewayProxyResult> = async (
   } catch (error) {
     DefaultLogger.error('Lambda handler exception');
 
-    switch (error) {
+    switch (error?.message) {
       default:
         return formResponse400({ error, message: error.message }, event, {
           debug: isDebug(event),
